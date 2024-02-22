@@ -1,0 +1,45 @@
+@use "../../assets/styles/globals/" as u;
+
+.header {
+  background-color: var(--e-global-background-color);
+
+  &__profile {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-size: u.$font-16;
+    color: var(--wc-white);
+  }
+
+  &__subtitle {
+    font-size: u.$font-12;
+    color: var(--wc-green);
+  }
+
+  &__toggle-theme {
+    color: var(--wc-white);
+  }
+
+  &__top-menu {
+    display: flex;
+    gap: 0.875rem;
+    margin-top: 2rem;
+  }
+
+  a {
+    display: flex;
+    color: var(--wc-white);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: inherit;
+    font-size: u.$font-12;
+    font-weight: 700;
+  }
+
+    &__menu-icon {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+}
