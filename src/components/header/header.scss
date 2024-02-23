@@ -6,6 +6,15 @@
   &__profile {
     display: flex;
     justify-content: space-between;
+    align-items: center; // correct if needed here
+
+    padding: 0.625rem 0;
+  }
+
+  &__left {
+    // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
   }
 
   &__title {
@@ -18,27 +27,87 @@
     color: var(--wc-green);
   }
 
+  &__right {
+    display: flex;
+    gap: 2rem;
+    padding: 0.625rem;
+  }
+
   &__toggle-theme {
+    margin-left: auto;
     color: var(--wc-white);
+
+    //theme icon
+    svg {
+      height: 1.125rem;
+    }
+  }
+
+  &__menu-hamburger {
+    > span {
+      display: block;
+      width: 1.575rem;
+      height: 0.15rem;
+      background-color: rgba(255, 255, 255, 0.85);
+
+      &:not(:nth-last-child(1)) {
+        margin-bottom: 0.25rem;
+      }
+
+      &:nth-child(1) {
+        width: 80%;
+      }
+
+      &:nth-child(3) {
+        width: 60%;
+      }
+    }
   }
 
   &__top-menu {
     display: flex;
-    gap: 0.875rem;
-    margin-top: 2rem;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin: 2rem 0 0.875rem 0;
   }
 
   a {
     display: flex;
-    color: var(--wc-white);
-    text-align: center;
-    margin-bottom: 1rem;
+    flex-direction: column;
     font-family: inherit;
     font-size: u.$font-12;
     font-weight: 700;
+    color: var(--wc-white);
+
+    &::before {
+      content: "";
+      position: relative;
+      top: 1rem;
+      left: 2rem;
+      height: 1px;
+      width: 100%;
+      transform: rotate(-90deg);
+      background: -moz-radial-gradient(
+        right,
+        ellipse cover,
+        #ddd 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      background: -webkit-radial-gradient(
+        right,
+        ellipse cover,
+        #ddd 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      background: radial-gradient(
+        ellipse at right,
+        #ddd 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+    }
   }
 
-    &__menu-icon {
+  &__menu-icon {
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
   }

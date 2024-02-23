@@ -1,11 +1,76 @@
 import styled from "styled-components";
-import Typewriter from "./Typewriter";
 import { ReactTyped } from "react-typed";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./hero.scss";
 
 const Hero = () => {
   return (
-    <section>
+    <section className="hero">
+      <div className="hero__profile-container">
+        <div className="hero__profile-image">
+          <div className="hero__profile-blur">
+            <div className="hero__profile-title">
+              <div className="hero__title">
+                Benjamin Ryan
+              </div>
+              <ReactTyped
+                strings={[
+                  "Full Stack Developer",
+                  "Software Developer ",
+                  "Mobile App Developer",
+                ]}
+                typeSpeed={100}
+                loop
+                backSpeed={20}
+                cursorChar="_"
+                showCursor={true}
+                backDelay={2000}
+                className="hero__subtitle"
+                style={{ fontSize: "1.3125rem" }}
+              />
+            </div>
+            <div className="hero__profile-socials">
+              <FontAwesomeIcon
+                icon={["fab", "linkedin"]}
+                className="hero__profile-icon"
+              />
+              <FontAwesomeIcon
+                icon={["fab", "reddit"]}
+                className="hero__profile-icon"
+              />
+              <FontAwesomeIcon
+                icon={["fab", "x-twitter"]}
+                className="hero__profile-icon"
+              />
+              <FontAwesomeIcon
+                icon={["fab", "stack-overflow"]}
+                className="hero__profile-icon"
+              />
+              <FontAwesomeIcon
+                icon={["fab", "github"]}
+                className="hero__profile-icon"
+              />
+            </div>
 
+            <div className="hero__delete-contact">
+              <button
+                type="button"
+                id="download-btn"
+                className="hero__download-btn"
+              >
+                DOWNLOAD CV <FontAwesomeIcon icon="cloud-arrow-down" />
+              </button>
+              <button
+                type="button"
+                id="contact-btn"
+                className="hero__contact-btn"
+              >
+                CONTACT <FontAwesomeIcon icon="phone" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* <div
         className="canvas abstract-background"

@@ -2,7 +2,7 @@ import { Header, Hero, Experience, Projects, Contacts } from "..";
 
 const Home = () => {
   return (
-    <section className="mx">
+    <section>
       <Header />
       <Hero />
       <Experience />
