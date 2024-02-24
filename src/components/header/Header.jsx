@@ -35,7 +35,7 @@ library.add(
 
 const Header = () => {
   return (
-    <header className="header w-btn-hide mx">
+    <header className="header w-btn-hide px">
       <div className="header__profile">
         <div className="header__left">
           <div className="header__title">Benjamin Ryan</div>
@@ -70,24 +70,23 @@ const Header = () => {
       <div className="header__top-menu menu-centered">
         <Link to="/home/about">
           <FontAwesomeIcon className="header__menu-icon" icon="circle-user" />
-          ABOUT
+          <span>ABOUT</span>
         </Link>
-        <span></span>
         <Link to="/home/resume">
           <FontAwesomeIcon className="header__menu-icon" icon="file-lines" />
-          RESUME
+          <span>RESUME</span>
         </Link>
         <Link to="/home/resume">
           <FontAwesomeIcon className="header__menu-icon" icon="microchip" />
-          PROJECTS
+          <span>PROJECTS</span>
         </Link>
         <Link to="/home/resume">
           <FontAwesomeIcon className="header__menu-icon" icon="comments" />
-          ARTICLES
+          <span>ARTICLES</span>
         </Link>
         <Link to="/home/resume">
           <FontAwesomeIcon className="header__menu-icon" icon="envelope" />
-          CONTACT
+          <span>CONTACT</span>
         </Link>
       </div>
     </header>
@@ -95,15 +94,3 @@ const Header = () => {
 };
 
 export default Header;
-
-/*
-
-<FontAwesomeIcon icon={faGithub} />
-<FontAwesomeIcon icon={faStackOverflow} />
-<FontAwesomeIcon icon={faXTwitter} />
-
-        <FontAwesomeIcon icon={faLinkedin} />
-        <FontAwesomeIcon icon={faPhone} />
-        <FontAwesomeIcon icon={faCloudArrowDown} />
-        
-*/

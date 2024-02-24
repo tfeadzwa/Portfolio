@@ -10,9 +10,7 @@ const Hero = () => {
         <div className="hero__profile-image">
           <div className="hero__profile-blur">
             <div className="hero__profile-title">
-              <div className="hero__title">
-                Benjamin Ryan
-              </div>
+              <div className="hero__title">Tafadzwa</div>
               <ReactTyped
                 strings={[
                   "Full Stack Developer",
@@ -52,20 +50,22 @@ const Hero = () => {
               />
             </div>
 
-            <div className="hero__delete-contact">
+            <div className="hero__download-contact lines">
               <button
                 type="button"
                 id="download-btn"
                 className="hero__download-btn"
               >
-                DOWNLOAD CV <FontAwesomeIcon icon="cloud-arrow-down" />
+                <span>DOWNLOAD CV</span>
+                <FontAwesomeIcon icon="cloud-arrow-down" />
               </button>
               <button
                 type="button"
                 id="contact-btn"
                 className="hero__contact-btn"
               >
-                CONTACT <FontAwesomeIcon icon="phone" />
+                <span>CONTACT</span>
+                <FontAwesomeIcon icon="phone" />
               </button>
             </div>
           </div>

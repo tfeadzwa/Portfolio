@@ -1,5 +1,10 @@
+@use "../../assets/styles/utils/" as u;
+@use "../../assets//styles/globals/" as f;
+
 .hero {
-  //   min-height: 100dvh;
+  min-height: 100dvh;
+  margin-top: 8.45rem;
+  margin-bottom: u.rem(50000);
 
   &__profile-container {
     position: relative;
@@ -9,21 +14,26 @@
   &__profile-image {
     position: relative;
     background-image: url(/images/profile-image.jpg);
-    background-size: 528px 560px;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: 50% 0;
+    background-position: center center;
     width: 100%;
-    height: 620px;
+    height: u.rem(620);
 
     -webkit-border-radius: 0 0 1.625rem 1.625rem;
     border-radius: 0 0 1.625rem 1.625rem;
+
+    @include u.breakpoints-up(medium) {
+      width: 50%;
+      margin: 0 auto;
+    }
   }
 
   &__profile-blur {
     position: absolute;
     text-align: center;
     width: 100%;
-    height: 43%;
+    height: 36%;
     bottom: 0;
     left: 0;
     right: 0;
@@ -67,26 +77,50 @@
     cursor: pointer;
   }
 
-  &__delete-contact {
+  &__download-contact {
     display: flex;
     margin-top: 2rem;
 
     button {
       width: 100%;
-      height: 70px;
-      line-height: 70px;
-      font-size: 14px;
+      height: u.rem(70);
+      line-height: u.rem(70);
+      font-size: f.$font-14;
       color: var(--wc-white);
       font-weight: 600;
       text-align: center;
-      text-decoration: none;
       background-color: transparent;
       border: none;
-      border-top: 0.1px solid yellow;
 
-      &:first-child {
-        border-right: 0.1px solid yellow;
+      span {
+        margin-right: 0.75rem;
       }
+    }
+  }
+
+  &__download-btn {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      right: 0;
+      top: 0;
+      width: u.rem(1);
+      height: 100%;
+
+      background: -webkit-radial-gradient(
+        top,
+        ellipse cover,
+        rgba(197, 202, 213, 0.15) 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
+      background: radial-gradient(
+        ellipse at top,
+        rgba(197, 202, 213, 0.15) 0%,
+        rgba(255, 255, 255, 0) 70%
+      );
     }
   }
 }
