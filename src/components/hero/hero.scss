@@ -4,7 +4,11 @@
 .hero {
   min-height: 100dvh;
   margin-top: 8.45rem;
-  margin-bottom: u.rem(50000);
+  margin-bottom: u.rem(50000); //testing purposes only
+
+  @include u.breakpoints-up(medium) {
+    margin-top: 0; // ok or temp
+  }
 
   &__profile-container {
     position: relative;

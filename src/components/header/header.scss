@@ -2,17 +2,77 @@
 @use "../../assets/styles/utils/" as u;
 
 .header {
-  background-color: var(--e-global-background-color);
+  z-index: 100;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  padding-inline: 1rem;
+  background-color: var(--e-global-background-color);
 
   @include u.breakpoints-up(medium) {
     float: left;
     width: fit-content;
     width: -moz-fit-content;
+    height: fit-content;
+    padding-inline: 0;
+    border-radius: 4rem;
+
+    padding: 20px 0;
+    margin-left: 2rem;
+    width: 82px;
+    min-height: 50%;
+    background: #fff;
+    top: 50%;
+    left: u.rem(10);
+    right: u.rem(10);
+    bottom: u.rem(-10);
+    background: 0 0 !important;
+    transform: translateY(-50%);
+
+    backdrop-filter: blur(u.rem(16));
+    --webkit-backdrop-filter: blur(u.rem(16));
+    box-shadow: u.rem(10) u.rem(10) u.rem(15) rgba(0, 0, 0, 0.05);
+    background: -webkit-linear-gradient(
+      top,
+      rgba(20, 24, 26, 0.5) 75%,
+      rgba(20, 24, 26, 1) 100%
+    ) !important;
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 24, 26, 0.5) 75%,
+      rgba(20, 24, 26, 1) 100%
+    ) !important;
+
+    &::before {
+      z-index: 0;
+      content: "";
+      position: absolute;
+      left: -10px;
+      top: 7px;
+      right: 10px;
+      bottom: -10px;
+      pointer-events: none;
+      // background: #26262d;
+
+      -webkit-transform: rotateY(9deg);
+      transform: rotateY(9deg);
+
+      border: 1px solid #4caf51;
+      // #fef100;
+      // opacity: 0.7;
+
+      -webkit-border-radius: 26px;
+      border-radius: 26px;
+    }
+  }
+
+  &__container {
+    position: relative;
+
+    @include u.breakpoints-up(medium) {
+      height: u.rem(457);
+    }
   }
 
   &__profile {
@@ -30,12 +90,12 @@
   }
 
   &__title {
-    font-size: f.$font-16;
+    font-size: clamp(u.rem(10), u.rem(4) + 2vw, u.rem(12));
     color: var(--wc-white);
   }
 
   &__subtitle {
-    font-size: f.$font-12;
+    font-size: clamp(u.rem(10), u.rem(4) + 2vw, u.rem(12));
     color: var(--wc-green);
   }
 
@@ -43,11 +103,21 @@
     display: flex;
     gap: 2rem;
     padding: 0.625rem;
+
+    @include u.breakpoints-up(medium) {
+      padding: 0;
+      margin-left: 1.8rem;
+    }
   }
 
   &__toggle-theme {
     margin-left: auto;
     color: var(--wc-white);
+
+    @include u.breakpoints-up(medium) {
+      position: absolute;
+      bottom: 0;
+    }
 
     //theme icon
     svg {
@@ -87,6 +157,7 @@
       flex-direction: column;
       width: fit-content;
       width: -moz-fit-content;
+      padding-top: 2.5rem;
     }
   }
 
@@ -102,15 +173,26 @@
     color: var(--wc-white);
 
     @include u.breakpoints-up(medium) {
-      padding: 10px;
+      padding: 0.625rem;
+    }
+
+    svg {
+      min-height: 1rem;
     }
 
     svg,
     span {
-      padding: 0 u.rem(10);
+      // padding: 0 0.125rem;
+      // font-size: clamp(u.rem(10), u.rem(4) + 2vw, u.rem(12));
 
       @include u.breakpoints-up(medium) {
         padding: 0;
+      }
+    }
+
+    @include u.breakpoints-up(medium) {
+      span {
+        line-height: u.rem(10);
       }
     }
 
@@ -146,7 +228,6 @@
           right: 0;
           height: u.rem(1.5);
           width: 100%;
-          background-color: yellow;
         }
       }
     }
