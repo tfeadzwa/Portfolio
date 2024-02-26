@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import Layout from "./layouts/Layout";
-import { Contacts, Experience, Hero, Projects } from "./components";
+import { Articles, Contact, Hero, Projects, Resume, About } from "./components";
 import AnimatedCursor from "react-animated-cursor";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ height: "100dvh" }}>
       <AnimatedCursor
         innerSize={8}
         outerSize={28}
@@ -44,10 +44,11 @@ function App() {
 
           <Route path="/">
             <Route index element={<Hero />} />
-            <Route path="hero" element={<Hero />} />
-            <Route path="skills" element={<Experience />} />
+            <Route path="about" element={<About />} />
+            <Route path="resume" element={<Resume />} />
             <Route path="projects" element={<Projects />} />
-            <Route path="contacts" element={<Contacts />} />
+            <Route path="articles" element={<Articles />} />
+            <Route path="contact" element={<Contact />} />
           </Route>
         </Route>
       </Routes>

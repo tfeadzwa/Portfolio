@@ -59,6 +59,9 @@
       transform: rotateY(9deg);
 
       border: 1px solid #4caf51;
+      border-right-width: 0;
+      border-top-width: 0;
+
       // #fef100;
       // opacity: 0.7;
 
@@ -103,6 +106,12 @@
     display: flex;
     gap: 2rem;
     padding: 0.625rem;
+
+    button {
+      background: none;
+      border: none;
+      outline: none;
+    }
 
     @include u.breakpoints-up(medium) {
       padding: 0;
@@ -190,9 +199,10 @@
       }
     }
 
-    @include u.breakpoints-up(medium) {
-      span {
+    span {
+      @include u.breakpoints-up(medium) {
         line-height: u.rem(10);
+        font-size: u.rem(12);
       }
     }
 

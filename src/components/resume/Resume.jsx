@@ -1,5 +1,9 @@
-const Footer = () => {
-  return <div>Footer</div>;
+const Resume = () => {
+  return (
+    <section className="resume" style={{ color: "white", fontSize: "2.4rem" }}>
+      Resume
+    </section>
+  );
 };
 
-export default Footer;
+export default Resume;

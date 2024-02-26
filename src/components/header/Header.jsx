@@ -56,45 +56,45 @@ const Header = () => {
             />
           </div>
           <div className="header__right">
-            <div className="header__toggle-theme">
+            <button className="header__toggle-theme">
               <FontAwesomeIcon icon="sun" />
               {/* <FontAwesomeIcon icon={faMoon} /> */}
-            </div>
-            <div className="header__menu-hamburger">
+            </button>
+            <button className="header__menu-hamburger">
               <span></span>
               <span></span>
               <span></span>
-            </div>
+            </button>
           </div>
         </div>
 
         <div className="header__top-menu menu-centered">
-          <Link to="/home/about">
+          <Link to="/about">
             <FontAwesomeIcon
               className="header__menu-icon custom"
               icon="circle-user"
             />
             <span>ABOUT</span>
           </Link>
-          <Link to="/home/resume">
+          <Link to="/resume">
             <FontAwesomeIcon
               className="header__menu-icon custom"
               icon="file-lines"
             />
             <span>RESUME</span>
           </Link>
-          <Link to="/home/resume">
+          <Link to="/projects">
             <FontAwesomeIcon
               className="header__menu-icon custom"
               icon="microchip"
             />
             <span>PROJECTS</span>
           </Link>
-          <Link to="/home/resume">
+          <Link to="/articles">
             <FontAwesomeIcon className="header__menu-icon" icon="comments" />
             <span>ARTICLES</span>
           </Link>
-          <Link to="/home/resume">
+          <Link to="/contact">
             <FontAwesomeIcon className="header__menu-icon" icon="envelope" />
             <span>CONTACT</span>
           </Link>

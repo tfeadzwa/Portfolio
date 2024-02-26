@@ -1,13 +1,10 @@
-import { Header, Hero, Experience, Projects, Contacts } from "..";
+import { Hero, Projects, Contact } from "..";
 
 const Home = () => {
   return (
-    <section style={{ backgroundColor: "#656565" }}>
-      <Header />
-      <Hero />
-      <Experience />
+    <section className="home" style={{}}>
       <Projects />
-      <Contacts />
+      <Contact />
     </section>
   );
 };

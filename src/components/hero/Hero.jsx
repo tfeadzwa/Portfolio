@@ -28,26 +28,36 @@ const Hero = () => {
               />
             </div>
             <div className="hero__profile-socials">
-              <FontAwesomeIcon
-                icon={["fab", "linkedin"]}
-                className="hero__profile-icon"
-              />
-              <FontAwesomeIcon
-                icon={["fab", "reddit"]}
-                className="hero__profile-icon"
-              />
-              <FontAwesomeIcon
-                icon={["fab", "x-twitter"]}
-                className="hero__profile-icon"
-              />
-              <FontAwesomeIcon
-                icon={["fab", "stack-overflow"]}
-                className="hero__profile-icon"
-              />
-              <FontAwesomeIcon
-                icon={["fab", "github"]}
-                className="hero__profile-icon"
-              />
+              <a href="https://www.linkedin.com/">
+                <FontAwesomeIcon
+                  icon={["fab", "linkedin"]}
+                  className="hero__profile-icon"
+                />
+              </a>
+              <a href="https://www.reddit.com">
+                <FontAwesomeIcon
+                  icon={["fab", "reddit"]}
+                  className="hero__profile-icon"
+                />
+              </a>
+              <a href="https://www.x.com">
+                <FontAwesomeIcon
+                  icon={["fab", "x-twitter"]}
+                  className="hero__profile-icon"
+                />
+              </a>
+              <a href="https://www.stackoverflow.com">
+                <FontAwesomeIcon
+                  icon={["fab", "stack-overflow"]}
+                  className="hero__profile-icon"
+                />
+              </a>
+              <a href="https://github.com/Tfeadzwa">
+                <FontAwesomeIcon
+                  icon={["fab", "github"]}
+                  className="hero__profile-icon"
+                />
+              </a>
             </div>
 
             <div className="hero__download-contact lines">
