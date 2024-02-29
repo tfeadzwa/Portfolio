@@ -59,8 +59,7 @@ const Hero = () => {
                 />
               </a>
             </div>
-
-            <div className="hero__download-contact lines">
+            <div className="hero__download-contact border-lines-top">
               <button
                 type="button"
                 id="download-btn"

@@ -1,18 +1,19 @@
 @use "../../assets/styles/utils/" as u;
-@use "../../assets//styles/globals/" as f;
 
 .hero {
-  // max-height: 100dvh;
+  height: 100%;
   margin-top: 8.45rem;
-  // margin-bottom: u.rem(50000); //testing purposes only
 
   @include u.breakpoints-up(medium) {
-    margin-top: 0; // ok or temp
+    margin-top: 0;
   }
 
   &__profile-container {
     position: relative;
     min-height: 100%;
+    -webkit-perspective: 30rem;
+    perspective: 30rem;
+    // width: 480px;
   }
 
   &__profile-image {
@@ -22,14 +23,20 @@
     background-repeat: no-repeat;
     background-position: center center;
     width: 100%;
-    height: u.rem(620);
+    height: u.rem(653.183);
 
-    -webkit-border-radius: 0 0 1.625rem 1.625rem;
-    border-radius: 0 0 1.625rem 1.625rem;
+    -webkit-border-radius: 1.625rem;
+    border-radius: 1.625rem;
 
-    @include u.breakpoints-up(medium) {
-      width: 50%;
-      margin: 0 auto;
+    @include u.breakpoints-down(small) {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+
+    @include u.breakpoints-up(large) {
+      -webkit-transform: rotateY(6deg);
+      transform: rotateY(6deg);
+      z-index: 2;
     }
   }
 
@@ -38,9 +45,9 @@
     text-align: center;
     width: 100%;
     height: 36%;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
     --webkit-backdrop-filter: blur(0.5rem);
     backdrop-filter: blur(0.5rem);
     background: linear-gradient(
@@ -53,8 +60,9 @@
     opacity: 1;
     color: var(--wc-white);
 
-    -webkit-border-radius: 0 0 1.625rem 1.625rem;
+    -webkit-border-radius: 1.625rem 1.625rem;
     border-radius: 0 0 1.625rem 1.625rem;
+    overflow: hidden;
   }
 
   &__profile-title {
@@ -79,6 +87,7 @@
     padding: 0.5rem;
     min-height: 1.25rem;
     cursor: pointer;
+    color: var(--wc-white);
   }
 
   &__download-contact {
@@ -89,7 +98,7 @@
       width: 100%;
       height: u.rem(70);
       line-height: u.rem(70);
-      font-size: f.$font-14;
+      font-size: u.$font-14;
       color: var(--wc-white);
       font-weight: 600;
       text-align: center;

@@ -1,7 +1,217 @@
-.about {
-  font-size: 2.5rem;
-  color: white;
-  background-color: magenta;
+@use "../../assets/styles/utils/" as u;
 
-  
+.about {
+  width: 100%;
+  color: #cecece;
+  // background: #14181a;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 50px;
+
+    @include u.breakpoints-up(medium) {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  }
+
+  &__content {
+    flex: 0 50%;
+  }
+
+  &__other {
+    flex: 1 0 50%;
+  }
+
+  &__title {
+    font-size: u.$font-21;
+  }
+
+  &__custom-intro {
+    display: inline-block;
+    width: 100%;
+    padding: 1.875rem 0 1.875rem; // change for desktop
+    vertical-align: top;
+
+    p {
+      font-size: u.$font-17;
+      line-height: 1.7;
+      margin: 0 0 25px;
+    }
+  }
+
+  &__other {
+  }
+
+  &__location,
+  &__languages,
+  &__skills {
+    font-size: 1.0625rem;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    word-break: break-word;
+    line-height: 1.25rem;
+    text-align: right;
+
+    strong {
+      float: left;
+      padding: 0.0625rem 0.5rem;
+      -moz-border-radius: 0.25rem;
+      -webkit-border-radius: 0.25rem;
+      -khtml-border-radius: 0.25rem;
+      border-radius: 0.25rem;
+      margin-right: 0.5rem;
+
+      font-weight: 400;
+      font-size: 0.875rem;
+      color: #323232;
+      background-color: #4caf51;
+    }
+  }
+
+  &__tool-items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5em;
+    flex-wrap: wrap;
+    max-width: u.rem(800);
+    padding-left: 0.625rem;
+  }
+
+  &__tool-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5em;
+    align-items: center;
+    padding: 0.5rem;
+    -webit-border-radius: 0.75rem;
+    border-radius: 0.75rem;
+    text-align: center;
+
+    &:hover {
+      background: hsl(0, 0%, 100%);
+      color: #242424;
+      transition: all 0.4s ease-in-out;
+    }
+  }
+
+  &__tool-icon {
+    -webkit-border-radius: 0.625rem;
+    border-radius: 0.625rem;
+    width: 2rem;
+    height: 2rem;
+
+    color: #4caf51;
+    font-size: 2rem;
+  }
+
+  &__tooltip {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      width: 100%;
+      height: 0.0625rem;
+      background: #4caf51;
+    }
+  }
+
+  &__tool-icon,
+  &__tool-item {
+    background: linear-gradient(
+      135deg,
+      rgba(76, 175, 81, 0.15) 0%,
+      rgba(76, 175, 81, 0.01) 100%
+    );
+  }
+
+  &__myservices {
+  }
+
+  &__services__container {
+  }
+
+  &__service-items {
+    // padding: 1.875rem 0 1.875rem;
+    margin-top: 1.5rem;
+
+    @include u.breakpoints-up(medium) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  }
+
+  &__item-container {
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+  }
+
+  &__service-item {
+    margin-bottom: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    -webkit-border-radius: 1.25rem;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+
+    background: rgba(255, 255, 255, 0.02);
+  }
+
+  &__service-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 32px;
+    color: #fff;
+    background: #78cc6d;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    -khtml-border-radius: 60px;
+    border-radius: 60px;
+
+    background: -moz-linear-gradient(
+      -45deg,
+      rgba(76, 175, 81, 0.15) 0%,
+      rgba(76, 175, 81, 0.01) 100%
+    );
+    background: -webkit-linear-gradient(
+      -45deg,
+      rgba(76, 175, 81, 0.15) 0%,
+      rgba(76, 175, 81, 0.01) 100%
+    );
+    background: linear-gradient(
+      135deg,
+      rgba(76, 175, 81, 0.15) 0%,
+      rgba(76, 175, 81, 0.01) 100%
+    );
+
+    svg {
+      fill: #4caf51;
+      width: u.rem(34);
+      height: u.rem(34);
+    }
+  }
+
+  &__service-name {
+    font-size: u.$font-17;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: left !important;
+    margin: 10px 0 5px;
+  }
+
+  &__service-desc {
+    text-align: left !important;
+    font-size: u.$font-17;
+    line-height: 1.7;
+  }
 }
