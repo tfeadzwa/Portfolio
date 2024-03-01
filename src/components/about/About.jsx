@@ -90,7 +90,7 @@ const About = () => {
 
               <div className="about__tool-item">
                 <div className="about__tool-icon">
-                  <i className="devicon-java-plain"></i>
+                  <FontAwesomeIcon icon={["fab", "java"]} />
                 </div>
                 <div className="about__tooltip">Java</div>
               </div>
