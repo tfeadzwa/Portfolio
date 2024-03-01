@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const CardWrap = styled.div`
   padding: 1.875rem;
-  
+
   @media (min-width: 64em) {
     position: relative;
     overflow-y: auto;
