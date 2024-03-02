@@ -24,35 +24,6 @@
   }
 }
 
-.border-line-bottom {
-  &::after {
-    content: "";
-    display: absolute;
-    left: 0;
-    bottom: 0;
-    height: 0.0625em;
-    width: 100%;
-
-    background: -moz-radial-gradient(
-      center,
-      ellipse cover,
-      #ddd 0%,
-      rgba(255, 255, 255, 0) 70%
-    );
-    background: -webkit-radial-gradient(
-      center,
-      ellipse cover,
-      #ddd 0%,
-      rgba(255, 255, 255, 0) 70%
-    );
-    background: radial-gradient(
-      ellipse at center,
-      #ddd 0%,
-      rgba(255, 255, 255, 0) 70%
-    );
-  }
-}
-
 .title {
   margin: 0;
   padding: 0 0 u.rem(30);
@@ -142,7 +113,8 @@
 //   clear: both;
 // }
 
-.row, .col {
+.row,
+.col {
   padding: 30px;
   position: relative;
   display: inline-block;
@@ -177,9 +149,39 @@
 .grid {
   display: grid;
 
-  &-repeat-2xfl {
+  &-tc {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+.line-timeline {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0.0625rem;
+    top: 1.875rem;
+    bottom: 1.875rem;
+    background: rgba(197, 202, 213, 0.15);
+  }
+}
+
+.light-background {
+  //you can move margin and padding into seperate custom classes
+  margin: u.rem(30) 0 u.rem(30) u.rem(15);
+  padding: u.rem(20);
+
+  border: u.rem(1) solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  -webkit-border-radius: u.rem(20);
+  border-radius: u.rem(20);
+}
+
+// apply green color to date element of first item
+.date-green {
+  border-color: #4caf51;
+  color: #4caf51;
 }
 
 .pos-relative {

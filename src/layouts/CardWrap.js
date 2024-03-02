@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const CardWrap = styled.div`
-  padding: 1.875rem;
+  padding: 1.875rem 1.875rem 0;
 
   @media (min-width: 64em) {
     position: relative;

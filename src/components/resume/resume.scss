@@ -52,20 +52,15 @@
     // style for medium and large screens
   }
 
-  .line-timeline {
-    position: relative;
+  // override horizontal vertical timeline alignment style for eduction section
+  &__education-section .line-timeline {
     &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 0.0625rem;
-      top: 1.875rem;
-      bottom: 1.875rem;
-      background: rgba(197, 202, 213, 0.15);
+      top: u.rem(36);
     }
   }
 
   // override horizontal line alignment styles for each resume item
+  // override for experience section
   &__items .border-line-h {
     &::after {
       left: u.rem(-15);
@@ -73,17 +68,17 @@
     }
   }
 
+  // override for eduction section
+  &__education-items .border-line-h {
+    &::before {
+      left: u.rem(-19);
+      top: u.rem(35);
+    }
+  }
+
   &__item {
-    border: u.rem(1) solid rgba(255, 255, 255, 0.06);
-    background: rgba(255, 255, 255, 0.02);
-    -webkit-border-radius: u.rem(20);
-    border-radius: u.rem(20);
-    border: u.rem(1) solid rgba(255, 255, 255, 0.06);
-    background: rgba(255, 255, 255, 0.02);
-
-    margin: u.rem(30) 0 u.rem(30) u.rem(15);
-
-    padding: u.rem(20);
+    margin-left: 15px;
+    padding: u.rem(30) 0;
 
     &::before {
       content: "";
@@ -99,10 +94,13 @@
       top: u.rem(26);
       left: u.rem(-20);
     }
-    L0 &:first-child {
-      &::before {
-        background-color: #4caf51;
-      }
+
+    &:first-child::before {
+      background-color: #4caf51;
+    }
+
+    &:last-child::after {
+      display: none;
     }
   }
 
@@ -124,12 +122,6 @@
       border-radius: 0;
       box-shadow: none;
     }
-  }
-
-  // apply green color to date element of first item
-  .date-green {
-    border-color: #4caf51;
-    color: #4caf51;
   }
 
   &__item-date {
