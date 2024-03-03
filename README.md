@@ -13,4 +13,4 @@ Currently, two official plugins are available:
 - fix container's margin --- see why the layout's main container is not respecting the margin set by container. fix it
 - set color: var(--wc-white); to remove blue color on profile's social icons.
 - see how you're goin to scroll on mobile - remember we're using react router in desktop - how're we going to implement same
-- content on mobile - also implementing smooth jump to page section
+- content on mobile - also implementing smooth jump to page section on mobile

@@ -3,6 +3,7 @@
 .resume {
   color: var(--wc-white);
   //   line-height: 1.7;
+  margin-bottom: 3000px;
 
   &__title {
     color: inherit;
@@ -14,13 +15,31 @@
 
   // override the default horizontal line style for experience section
   &__experience .border-line-h,
-  &__education .border-line-h {
-    &::after {
-      left: 0;
-    }
+  &__education .border-line-h::after {
+    left: 0;
+  }
+
+  .border-line-v::before {
+    top: 0;
+    left: -0.0625rem;
   }
 
   &__container {
+    margin: 0 -30px;
+  }
+
+  &__experience-education {
+    @media (min-width: 48em) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__section-container {
+    padding: 1.875rem;
+  }
+
+  &__section-header {
     padding-top: 1.875rem;
   }
 
@@ -202,5 +221,76 @@
   &__right-arrow {
     padding-left: 0.25rem;
     color: inherit;
+  }
+
+  // Programming skills
+
+  &__skills-items {
+    @include u.breakpoints-up(medium) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__skills-icon {
+    font-size: 6em;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    padding: 30px 0 0;
+    text-align: center;
+    color: var(--wc-white);
+    display: block;
+    transition: transform 0.2s;
+  }
+
+  .resume__skills-item {
+    background: linear-gradient(
+      135deg,
+      rgba(76, 175, 81, 0.15) 0%,
+      rgba(76, 175, 81, 0.01) 100%
+    );
+
+    &:hover {
+      cursor: pointer;
+      .resume__skills-icon {
+        color: #4caf51;
+        // color: #78cc6d;
+        transform: translateY(10px);
+      }
+
+      .resume__skills-name {
+        color: #242424;
+        transform: translateY(-30px);
+
+        &::before {
+          margin-top: u.rem(80);
+        }
+      }
+      background: hsl(0, 0%, 100%);
+    }
+  }
+
+  &__skills-name {
+    position: relative;
+    margin: u.rem(20) 0 u.rem(10);
+    padding: u.rem(20) 0 0;
+    font-size: u.$font-17;
+    font-weight: 400;
+    line-height: 1.7;
+    color: white;
+    text-align: center;
+    transition: transform 0.2s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: rgb(61, 149, 97);
+      width: u.rem(60);
+      height: u.rem(2);
+      top: 0;
+      left: 50%;
+      margin: 0 0 0 u.rem(-30);
+      transition: margin-top 0.2s;
+    }
   }
 }

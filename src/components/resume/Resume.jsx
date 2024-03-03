@@ -8,11 +8,10 @@ const Resume = () => {
         <span>Resume</span>
       </div>
 
-      {/* ToDo: Use grid to apply columns (medium & large screens). Apply vertical alignment between experience & eduation section*/}
-      <div className="flexx">
-        {/* experience section */}
-        <div className="resume__experience-section">
-          <div className="resume__container resume__experience">
+      <div className="resume__container resume__experience-education">
+        {/* EXPERIENCE SECTION */}
+        <div className="resume__experience-section resume__section-container">
+          <div className="resume__section-header resume__experience">
             <div className="resume__sub-title border-line-h pos-relative">
               <div className="resume__icon icon">
                 <svg
@@ -125,8 +124,8 @@ const Resume = () => {
         </div>
 
         {/* education section */}
-        <div className="resume__education-section pos-relative border-line-v">
-          <div className="resume__container resume__education">
+        <div className="resume__education-section resume__section-container border-line-v pos-relative">
+          <div className="resume__section-header resume__education">
             <div className="resume__sub-title border-line-h pos-relative">
               <div className="resume__icon icon">
                 <svg
@@ -183,7 +182,7 @@ const Resume = () => {
                 <p>
                   ZGCE Advanced Level, a Zimbabwe General Certificate of
                   Education Examination at Advanced Level. Attained 3 'A' Level
-                  passes with a total of '9' points in Arts.
+                  passes with a total of &#39;9&#39; points in Arts.
                 </p>
               </div>
               <a
@@ -229,6 +228,137 @@ const Resume = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* PROGRAMMING SKILLS */}
+      <div className="resume__title title border-line-h pos-relative">
+        <span>Programming Skills</span>
+      </div>
+
+      <div className="resume__container resume__skills-container">
+        <div className="resume__section-container">
+          <ul className="resume__skills-items">
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <FontAwesomeIcon icon={["fab", "python"]} />
+                <div className=" resume__skills-name">Python</div>
+              </div>
+            </li>
+
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-typescript-plain"></i>
+                <div className=" resume__skills-name">Typescript</div>
+              </div>
+            </li>
+
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <FontAwesomeIcon icon={["fab", "java"]} />
+                <div className=" resume__skills-name">Java</div>
+              </div>
+            </li>
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-csharp-plain"></i>
+                <div className=" resume__skills-name">C#</div>
+              </div>
+            </li>
+
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <FontAwesomeIcon icon={["fab", "js"]} />
+                <div className=" resume__skills-name">JavaScript</div>
+              </div>
+            </li>
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-css3-plain"></i>
+                <div className=" resume__skills-name">Css3</div>
+              </div>
+            </li>
+
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-sass-original"></i>
+                <div className=" resume__skills-name">Sass</div>
+              </div>
+            </li>
+
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-html5-plain"></i>
+                <div className=" resume__skills-name">html5</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* TOOL STACK */}
+      <div className="resume__title title border-line-h pos-relative">
+        <span>Tool Stack</span>
+      </div>
+
+      <div className="resume__container resume__toolstack-container">
+        <div className="resume__section-container">
+          <ul className="resume__skills-items">
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-vscode-plain"></i>
+                <div className=" resume__skills-name">VSCode</div>
+              </div>
+            </li>
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-vitejs-plain"></i>
+                <div className=" resume__skills-name">ViteJs</div>
+              </div>
+            </li>
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-npm-original-wordmark"></i>
+                <div className=" resume__skills-name">Npm</div>
+              </div>
+            </li>
+
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-bash-plain"></i>
+                <div className=" resume__skills-name">bash</div>
+              </div>
+            </li>
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-amazonwebservices-plain-wordmark"></i>
+                <div className=" resume__skills-name">AWS</div>
+              </div>
+            </li>
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-postman-plain"></i>
+                <div className=" resume__skills-name">Postman</div>
+              </div>
+            </li>
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-git-plain"></i>
+                <div className=" resume__skills-name">Git</div>
+              </div>
+            </li>
+            <li className="resume__skills-item light-background pos-relative">
+              <div className="resume__skills-icon">
+                <i className="devicon-github-original"></i>
+                <div className=" resume__skills-name">Github</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* GENERAL SKILLS */}
+      <div className="resume__title title border-line-h pos-relative">
+        <span>General Skills</span>
       </div>
     </section>
   );
