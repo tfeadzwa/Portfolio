@@ -18,6 +18,7 @@ import {
   faPhone,
   faDatabase,
   faAngleRight,
+  faLanguage,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add only the icons you need to the library
@@ -34,7 +35,8 @@ library.add(
   faCloudArrowDown,
   faPhone,
   faDatabase,
-  faAngleRight
+  faAngleRight,
+  faLanguage
 );
 
 const Header = () => {

@@ -28,7 +28,9 @@
     margin: 0 -30px;
   }
 
-  &__experience-education {
+  &__experience-education,
+  &__databases-knowledge,
+  &__frameworks-languages {
     @media (min-width: 48em) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -37,10 +39,6 @@
 
   &__section-container {
     padding: 1.875rem;
-  }
-
-  &__section-header {
-    padding-top: 1.875rem;
   }
 
   &__icon {
@@ -226,24 +224,42 @@
   // Programming skills
 
   &__skills-items {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, u.rem(170)));
+    gap: 1em;
+
     @include u.breakpoints-up(medium) {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, minmax(0, u.rem(170)));
+    }
+
+    .light-background {
+      padding: 0;
+      margin: 0;
+      margin-left: 0;
     }
   }
 
   &__skills-icon {
-    font-size: 6em;
+    font-size: 4em;
     line-height: 1;
     -webkit-font-smoothing: antialiased;
-    padding: 30px 0 0;
+    padding: u.rem(20) 0 0;
     text-align: center;
     color: var(--wc-white);
     display: block;
     transition: transform 0.2s;
+
+    i {
+      position: relative;
+      padding: u.rem(10);
+      border: u.rem(2.5) solid rgb(61, 149, 97);
+      border-radius: 50%;
+    }
   }
 
   .resume__skills-item {
+    max-width: u.rem(170);
+
     background: linear-gradient(
       135deg,
       rgba(76, 175, 81, 0.15) 0%,
@@ -252,21 +268,21 @@
 
     &:hover {
       cursor: pointer;
+      background: hsl(0, 0%, 100%);
+
       .resume__skills-icon {
         color: #4caf51;
-        // color: #78cc6d;
         transform: translateY(10px);
       }
 
       .resume__skills-name {
         color: #242424;
-        transform: translateY(-30px);
+        transform: translateY(u.rem(-30));
 
         &::before {
-          margin-top: u.rem(80);
+          margin-top: u.rem(68);
         }
       }
-      background: hsl(0, 0%, 100%);
     }
   }
 
@@ -293,4 +309,6 @@
       transition: margin-top 0.2s;
     }
   }
+
+  //GENERAL SKILLS
 }
