@@ -281,7 +281,7 @@ const Resume = () => {
 
             <li className="resume__skills-item light-background pos-relative">
               <div className="resume__skills-icon">
-                <i className="devicon-sass-original"></i>
+                <i className="devicon-sass-original col"></i>
                 <div className=" resume__skills-name">Sass</div>
               </div>
             </li>
@@ -313,39 +313,33 @@ const Resume = () => {
             <li className="resume__skills-item light-background pos-relative">
               <div className="resume__skills-icon">
                 <i className="devicon-vitejs-plain"></i>
-                <div className=" resume__skills-name">vitejs</div>
-              </div>
-            </li>
-            <li className="resume__skills-item light-background pos-relative">
-              <div className="resume__skills-icon">
-                <i className="devicon-npm-original-wordmark"></i>
-                <div className=" resume__skills-name">npm</div>
+                <div className=" resume__skills-name">Vitejs</div>
               </div>
             </li>
 
             <li className="resume__skills-item light-background pos-relative">
               <div className="resume__skills-icon">
                 <i className="devicon-bash-plain"></i>
-                <div className=" resume__skills-name">bash</div>
+                <div className=" resume__skills-name">Bash</div>
               </div>
             </li>
 
             <li className="resume__skills-item light-background pos-relative">
               <div className="resume__skills-icon">
-                <i className="devicon-postman-plain"></i>
-                <div className=" resume__skills-name">postman</div>
+                <i className="devicon-redux-plain"></i>
+                <div className=" resume__skills-name">Redux</div>
               </div>
             </li>
             <li className="resume__skills-item light-background pos-relative">
               <div className="resume__skills-icon">
                 <i className="devicon-git-plain"></i>
-                <div className=" resume__skills-name">git</div>
+                <div className=" resume__skills-name">Git</div>
               </div>
             </li>
             <li className="resume__skills-item light-background pos-relative">
               <div className="resume__skills-icon">
                 <i className="devicon-github-original"></i>
-                <div className=" resume__skills-name">github</div>
+                <div className=" resume__skills-name">GitHub</div>
               </div>
             </li>
           </ul>
@@ -380,20 +374,20 @@ const Resume = () => {
             <ul className="resume__skills-items">
               <li className="resume__skills-item light-background pos-relative">
                 <div className="resume__skills-icon">
-                  <i className="devicon-react-plain"></i>
-                  <div className=" resume__skills-name">React</div>
+                  <i className="devicon-react-plain colored"></i>
+                  <div className=" resume__skills-name">Reactjs</div>
                 </div>
               </li>
               <li className="resume__skills-item light-background pos-relative">
                 <div className="resume__skills-icon">
-                  <i className="devicon-nodejs-plain-wordmark"></i>
+                  <i className="devicon-nodejs-plain-wordmark colored"></i>
                   <div className=" resume__skills-name">Nodejs</div>
                 </div>
               </li>
               <li className="resume__skills-item light-background pos-relative">
                 <div className="resume__skills-icon">
                   <i className="devicon-express-original"></i>
-                  <div className=" resume__skills-name">vscode</div>
+                  <div className=" resume__skills-name">Expressjs</div>
                 </div>
               </li>
             </ul>
@@ -417,20 +411,17 @@ const Resume = () => {
             <ul className="resume__skills-items">
               <li className="resume__skills-item light-background pos-relative">
                 <div className="resume__skills-icon">
-                  <i className="devicon-vscode-plain"></i>
-                  <div className=" resume__skills-name">vscode</div>
+                  <img
+                    src="/images/united-kingdom.png"
+                    style={{ width: "4rem", height: "4rem" }}
+                  />
+                  <div className=" resume__skills-name">English</div>
                 </div>
               </li>
               <li className="resume__skills-item light-background pos-relative">
                 <div className="resume__skills-icon">
-                  <i className="devicon-vscode-plain"></i>
-                  <div className=" resume__skills-name">vscode</div>
-                </div>
-              </li>
-              <li className="resume__skills-item light-background pos-relative">
-                <div className="resume__skills-icon">
-                  <i className="devicon-vscode-plain"></i>
-                  <div className=" resume__skills-name">vscode</div>
+                  <img src="/images/zim-flag.png" />
+                  <div className=" resume__skills-name">Shona</div>
                 </div>
               </li>
             </ul>
@@ -468,7 +459,7 @@ const Resume = () => {
               </li>
               <li className="resume__skills-item light-background pos-relative">
                 <div className="resume__skills-icon">
-                  <i className="devicon-mongodb-plain"></i>
+                  <i className="devicon-mongodb-plain colored"></i>
                   <div className=" resume__skills-name">MongoDB</div>
                 </div>
               </li>
@@ -496,23 +487,45 @@ const Resume = () => {
           </div>
 
           <div className="resume__items">
-            <ul className="resume__skills-items">
-              <li className="resume__skills-item light-background pos-relative">
-                <div className="resume__skills-icon">
-                  <i className="devicon-vscode-plain"></i>
-                  <div className=" resume__skills-name">vscode</div>
+            <ul className="resume__knowledge-items">
+              <li className="resume__knowledge-item">
+                <div className="resume__knowledge-name">
+                  <span> Data science and machine learning </span>
                 </div>
               </li>
-              <li className="resume__skills-item light-background pos-relative">
-                <div className="resume__skills-icon">
-                  <i className="devicon-vscode-plain"></i>
-                  <div className=" resume__skills-name">vscode</div>
+              <li className="resume__knowledge-item">
+                <div className="resume__knowledge-name">
+                  <span> Data structures and algorithms </span>
                 </div>
               </li>
-              <li className="resume__skills-item light-background pos-relative">
-                <div className="resume__skills-icon">
-                  <i className="devicon-vscode-plain"></i>
-                  <div className=" resume__skills-name">vscode</div>
+              <li className="resume__knowledge-item">
+                <div className="resume__knowledge-name">
+                  <span> SQL and database technologies </span>
+                </div>
+              </li>
+              <li className="resume__knowledge-item">
+                <div className="resume__knowledge-name">
+                  <span> Project management and development </span>
+                </div>
+              </li>
+              <li className="resume__knowledge-item">
+                <div className="resume__knowledge-name">
+                  <span> Git and GitHub </span>
+                </div>
+              </li>
+              <li className="resume__knowledge-item">
+                <div className="resume__knowledge-name">
+                  <span> Linux and Windows management </span>
+                </div>
+              </li>
+              <li className="resume__knowledge-item">
+                <div className="resume__knowledge-name">
+                  <span> Communication and collaboration </span>
+                </div>
+              </li>
+              <li className="resume__knowledge-item">
+                <div className="resume__knowledge-name">
+                  <span> Object-Oriented Programming (OOP) </span>
                 </div>
               </li>
             </ul>

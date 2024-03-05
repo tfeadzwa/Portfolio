@@ -19,10 +19,12 @@ import {
   faDatabase,
   faAngleRight,
   faLanguage,
+  faFlagUsa,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add only the icons you need to the library
 library.add(
+  faFlagUsa,
   fab,
   faCircleUser,
   faFileLines,

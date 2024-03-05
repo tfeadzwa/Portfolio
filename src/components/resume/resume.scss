@@ -3,15 +3,6 @@
 .resume {
   color: var(--wc-white);
   //   line-height: 1.7;
-  margin-bottom: 3000px;
-
-  &__title {
-    color: inherit;
-    font-weight: 700;
-    font-size: u.$font-21;
-    transition: background 0.3s, border 0.3s, border-radius 0.3s,
-      box-shadow 0.3s, transform var(--e-transform-transition-duration, 0.4s);
-  }
 
   // override the default horizontal line style for experience section
   &__experience .border-line-h,
@@ -31,9 +22,19 @@
   &__experience-education,
   &__databases-knowledge,
   &__frameworks-languages {
+    display: grid;
+
     @media (min-width: 48em) {
-      display: grid;
       grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__databases-knowledge,
+  &__frameworks-languages {
+    .resume__skills-items {
+      @media (min-width: 48em) {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
   }
 
@@ -66,7 +67,7 @@
   }
 
   &__items {
-    // style for medium and large screens
+    padding-top: u.rem(20);
   }
 
   // override horizontal vertical timeline alignment style for eduction section
@@ -161,7 +162,7 @@
   &__item-name {
     font-size: u.$font-17;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color-white);
     line-height: 1.3;
   }
 
@@ -249,6 +250,10 @@
     display: block;
     transition: transform 0.2s;
 
+    img {
+      width: 3.5rem;
+    }
+
     i {
       position: relative;
       padding: u.rem(10);
@@ -293,7 +298,7 @@
     font-size: u.$font-17;
     font-weight: 400;
     line-height: 1.7;
-    color: white;
+    color: var(--text-color-white);
     text-align: center;
     transition: transform 0.2s;
 
@@ -311,4 +316,34 @@
   }
 
   //GENERAL SKILLS
+
+  &__knowledge-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color-white);
+    font-size: u.$font-17;
+    font-weight: 400;
+    padding-top: 0.625rem;
+
+    &:first-child {
+      padding-top: u.rem(2);
+    }
+
+    &::before {
+      content: "";
+      background-image: url(/icons/icon-check-flat.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      height: u.rem(24);
+      aspect-ratio: 1;
+      display: inline-block;
+      font-weight: 400;
+      // font-variant: normal;
+      // text-transform: none;
+      // text-rendering: auto;
+      // line-height: 1;
+    }
+  }
 }

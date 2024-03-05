@@ -3,6 +3,7 @@ import Home from "./components/home/Home";
 import Layout from "./layouts/Layout";
 import { Articles, Contact, Hero, Projects, Resume, About } from "./components";
 import AnimatedCursor from "react-animated-cursor";
+import projectRoutes from "./components/projects/projectRoutes";
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
           border: "1px solid var(--cursor-color)",
         }}
         innerStyle={{
-          backgroundColor: "var(--cursor-color)",
+          backgroundColor: "transparent",
+          // backgroundColor: "var(--cursor-color)",
         }}
         clickables={[
           "a",
@@ -46,7 +48,7 @@ function App() {
             <Route index element={<Hero />} />
             <Route path="about" element={<About />} />
             <Route path="resume" element={<Resume />} />
-            <Route path="projects" element={<Projects />} />
+            {projectRoutes}
             <Route path="articles" element={<Articles />} />
             <Route path="contact" element={<Contact />} />
           </Route>
