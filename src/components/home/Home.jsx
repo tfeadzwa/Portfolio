@@ -1,10 +1,9 @@
-import { Hero, Projects, Contact } from "..";
+import { About } from "..";
 
 const Home = () => {
   return (
     <section className="home" style={{}}>
-      <Projects />
-      <Contact />
+      <About />
     </section>
   );
 };

@@ -2,7 +2,7 @@ import { ReactTyped } from "react-typed";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fab } from "@fortawesome/free-brands-svg-icons";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./header.scss";
 
 import {
@@ -77,35 +77,35 @@ const Header = () => {
         </div>
 
         <div className="header__top-menu menu-centered">
-          <Link to="/about">
+          <NavLink to="/about">
             <FontAwesomeIcon
               className="header__menu-icon custom"
               icon="circle-user"
             />
             <span>ABOUT</span>
-          </Link>
-          <Link to="/resume">
+          </NavLink>
+          <NavLink to="/resume">
             <FontAwesomeIcon
               className="header__menu-icon custom"
               icon="file-lines"
             />
             <span>RESUME</span>
-          </Link>
-          <Link to="/projects">
+          </NavLink>
+          <NavLink to="/projects">
             <FontAwesomeIcon
               className="header__menu-icon custom"
               icon="microchip"
             />
             <span>PROJECTS</span>
-          </Link>
-          <Link to="/articles">
+          </NavLink>
+          <NavLink to="/articles">
             <FontAwesomeIcon className="header__menu-icon" icon="comments" />
             <span>ARTICLES</span>
-          </Link>
-          <Link to="/contact">
+          </NavLink>
+          <NavLink to="/contact">
             <FontAwesomeIcon className="header__menu-icon" icon="envelope" />
             <span>CONTACT</span>
-          </Link>
+          </NavLink>
         </div>
       </section>
     </header>

@@ -370,7 +370,7 @@ const Resume = () => {
             </div>
           </div>
 
-          <div className="resume__items">
+          <div className="resume__items resume__general-sec-items">
             <ul className="resume__skills-items">
               <li className="resume__skills-item light-background pos-relative">
                 <div className="resume__skills-icon">
@@ -408,7 +408,7 @@ const Resume = () => {
           </div>
 
           <div className="resume__items">
-            <ul className="resume__skills-items">
+            <ul className="resume__skills-items resume__general-sec-items">
               <li className="resume__skills-item light-background pos-relative">
                 <div className="resume__skills-icon">
                   <img
@@ -444,7 +444,7 @@ const Resume = () => {
           </div>
 
           <div className="resume__items">
-            <ul className="resume__skills-items">
+            <ul className="resume__skills-items resume__general-sec-items">
               <li className="resume__skills-item light-background pos-relative">
                 <div className="resume__skills-icon">
                   <i className="devicon-oracle-plain"></i>
@@ -486,7 +486,7 @@ const Resume = () => {
             </div>
           </div>
 
-          <div className="resume__items">
+          <div className="resume__items resume__general-sec-items">
             <ul className="resume__knowledge-items">
               <li className="resume__knowledge-item">
                 <div className="resume__knowledge-name">

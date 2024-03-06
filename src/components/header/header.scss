@@ -96,6 +96,10 @@
     color: var(--wc-white);
   }
 
+  .active {
+    color: #4caf51;
+  }
+
   &__subtitle {
     font-size: clamp(u.rem(10), u.rem(4) + 2vw, u.rem(12));
     color: var(--wc-green);

@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/header/Header";
 import styled from "styled-components";
-import { Hero } from "../components";
+import { Hero, Projects } from "../components";
 import { CardInner } from "./CardInner";
 import { CardWrap } from "./CardWrap";
 

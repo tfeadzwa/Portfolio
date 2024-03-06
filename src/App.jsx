@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import Layout from "./layouts/Layout";
-import { Articles, Contact, Hero, Projects, Resume, About } from "./components";
+import { Articles, Contact, Hero, Resume, About } from "./components";
 import AnimatedCursor from "react-animated-cursor";
 import projectRoutes from "./components/projects/projectRoutes";
 
@@ -48,6 +48,7 @@ function App() {
             <Route index element={<Hero />} />
             <Route path="about" element={<About />} />
             <Route path="resume" element={<Resume />} />
+
             {projectRoutes}
             <Route path="articles" element={<Articles />} />
             <Route path="contact" element={<Contact />} />
