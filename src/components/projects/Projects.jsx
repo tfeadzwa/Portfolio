@@ -10,8 +10,8 @@ const Projects = () => {
           <span>Projects</span>
         </div>
 
-        <div className="projects__content border-line-v pos-relative">
-          <div className="projects__items-container">
+        <div className="projects__content pos-relative">
+          <div className="projects__items-container pos-relative">
             <div className="projects__items">
               <div className="projects__item">
                 <Link className="projects__image-link">
@@ -21,10 +21,16 @@ const Projects = () => {
                 </Link>
                 <div className="projects__desc">
                   <div className="projects__name">
-                    <span>Content</span>
+                    <span>CONTENT</span>
                   </div>
                   <div className="projects__title">
                     <span>Cryptocurrency Dashboard Application</span>
+                    <a href="https://www.github.com/Tfeadzwa" target="_blank">
+                      <FontAwesomeIcon
+                        icon={["fab", "github"]}
+                        className="projects__git-icon"
+                      />
+                    </a>
                   </div>
                 </div>
               </div>
@@ -36,10 +42,58 @@ const Projects = () => {
                 </Link>
                 <div className="projects__desc">
                   <div className="projects__name">
-                    <span>Content</span>
+                    <span>CONTENT</span>
                   </div>
                   <div className="projects__title">
                     <span>Cryptocurrency Dashboard Application</span>
+                    <a href="https://www.github.com/Tfeadzwa" target="_blank">
+                      <FontAwesomeIcon
+                        icon={["fab", "github"]}
+                        className="projects__git-icon"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="projects__item">
+                <Link className="projects__image-link">
+                  <div className="projects__image">
+                    <img src="/images/work3-1.jpg" />
+                  </div>
+                </Link>
+                <div className="projects__desc">
+                  <div className="projects__name">
+                    <span>CONTENT</span>
+                  </div>
+                  <div className="projects__title">
+                    <span>Cryptocurrency Dashboard Application</span>
+                    <a href="https://www.github.com/Tfeadzwa" target="_blank">
+                      <FontAwesomeIcon
+                        icon={["fab", "github"]}
+                        className="projects__git-icon"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="projects__item">
+                <Link className="projects__image-link">
+                  <div className="projects__image">
+                    <img src="/images/work3-1.jpg" />
+                  </div>
+                </Link>
+                <div className="projects__desc">
+                  <div className="projects__name">
+                    <span>CONTENT</span>
+                  </div>
+                  <div className="projects__title">
+                    <span>Cryptocurrency Dashboard Application</span>
+                    <a href="https://www.github.com/Tfeadzwa" target="_blank">
+                      <FontAwesomeIcon
+                        icon={["fab", "github"]}
+                        className="projects__git-icon"
+                      />
+                    </a>
                   </div>
                 </div>
               </div>
