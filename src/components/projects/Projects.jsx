@@ -13,7 +13,7 @@ const Projects = () => {
         <div className="projects__content pos-relative">
           <div className="projects__items-container pos-relative">
             <div className="projects__items">
-              <div className="projects__item">
+              <div className="projects__item border-line-h pos-relative">
                 <Link className="projects__image-link">
                   <div className="projects__image">
                     <img src="/images/work-r2.jpg" />
@@ -34,7 +34,8 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-              <div className="projects__item">
+
+              <div className="projects__item border-line-h pos-relative">
                 <Link className="projects__image-link">
                   <div className="projects__image">
                     <img src="/images/work3-1.jpg" />
@@ -55,7 +56,7 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-              <div className="projects__item">
+              <div className="projects__item border-line-h pos-relative">
                 <Link className="projects__image-link">
                   <div className="projects__image">
                     <img src="/images/work3-1.jpg" />
@@ -76,7 +77,7 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-              <div className="projects__item">
+              <div className="projects__item border-line-h pos-relative">
                 <Link className="projects__image-link">
                   <div className="projects__image">
                     <img src="/images/work3-1.jpg" />

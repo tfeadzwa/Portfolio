@@ -7,7 +7,7 @@
   // override the default horizontal line style for experience section
   &__experience .border-line-h,
   &__education .border-line-h::after {
-    left: 0;
+    // left: 0;
   }
 
   .border-line-v::before {

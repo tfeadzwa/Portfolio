@@ -6,33 +6,41 @@
   &__items-container {
     margin: 0 u.rem(-30);
 
-    &::before {
-      content: "";
-      position: absolute;
-      left: 50%;
-      top: 0;
-      width: u.rem(1);
-      height: 100%;
-      background: radial-gradient(
-        ellipse at top,
-        rgba(197, 202, 213, 0.15) 0%,
-        rgba(255, 255, 255, 0) 90%
-      );
+    @include u.breakpoints-up(medium) {
+      &::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 0;
+        width: u.rem(1);
+        height: 100%;
+        background: radial-gradient(
+          ellipse at top,
+          rgba(197, 202, 213, 0.15) 0%,
+          rgba(255, 255, 255, 0) 90%
+        );
+      }
     }
   }
 
   &__items {
+    display: grid;
+    padding: u.rem(30);
     background: radial-gradient(
       ellipse at left,
       rgba(197, 202, 213, 0.15) 0%,
       rgba(255, 255, 255, 0) 70%
     );
-    display: grid;
+
+    .border-line-h::after {
+      bottom: -4%;
+      left: -20px;
+    }
+
     @include u.breakpoints-up(medium) {
       grid-template-columns: repeat(2, minmax(0, u.rem(400)));
       gap: 2.5rem;
     }
-    padding: u.rem(30);
   }
 
   &__item {
@@ -40,10 +48,14 @@
     border-radius: u.rem(20);
     padding: u.rem(10) u.rem(10) u.rem(20);
     border: u.rem(1) solid rgba(255, 255, 255, 0.06);
-    // margin-bottom: u.rem(30);
+    margin-bottom: u.rem(30);
     font-size: u.$font-17;
     background: rgba(255, 255, 255, 0.02);
     transition: all 0.3s ease-in-out;
+
+    @include u.breakpoints-up(large) {
+      margin-bottom: 0;
+    }
 
     &:hover {
       .projects__title {
@@ -72,7 +84,7 @@
     position: relative;
     overflow: hidden;
     border-radius: u.rem(20);
-    height: u.rem(350);
+    height: u.rem(330);
 
     &::before {
       content: "";
@@ -102,8 +114,8 @@
   }
 
   &__desc {
-    padding-left: u.rem(10);
     padding: u.rem(15) 0 0;
+    padding-left: u.rem(10);
     text-align: left;
   }
 
