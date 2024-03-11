@@ -22,19 +22,19 @@ const About = () => {
         </div>
 
         <div className="about__other border-line-v pos-relative">
-          <div className="about__location border-line-h pos-relative">
+          <div className="about__location info-list border-line-h pos-relative">
             <strong>
               <span>Location: </span>
             </strong>
             <span>Harare, ZW</span>
           </div>
-          <div className="about__languages border-line-h pos-relative">
+          <div className="about__languages info-list border-line-h pos-relative">
             <strong>
               <span>Languages: </span>
             </strong>
             <span>English, Shona</span>
           </div>
-          <div className="about__skills border-line-h pos-relative">
+          <div className="about__skills info-list border-line-h pos-relative">
             <strong>
               <span>Skills: </span>
             </strong>

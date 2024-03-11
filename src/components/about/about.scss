@@ -45,31 +45,31 @@
   &__other {
   }
 
-  &__location,
-  &__languages,
-  &__skills {
-    font-size: u.$font-17;
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-    word-break: break-word;
-    line-height: 1.25rem;
-    text-align: right;
+  // &__location,
+  // &__languages,
+  // &__skills {
+  //   font-size: u.$font-17;
+  //   padding-top: 1.25rem;
+  //   padding-bottom: 1.25rem;
+  //   word-break: break-word;
+  //   line-height: 1.25rem;
+  //   text-align: right;
 
-    strong {
-      float: left;
-      padding: 0.0625rem 0.5rem;
-      -moz-border-radius: 0.25rem;
-      -webkit-border-radius: 0.25rem;
-      -khtml-border-radius: 0.25rem;
-      border-radius: 0.25rem;
-      margin-right: 0.5rem;
+  //   strong {
+  //     float: left;
+  //     padding: 0.0625rem 0.5rem;
+  //     -moz-border-radius: 0.25rem;
+  //     -webkit-border-radius: 0.25rem;
+  //     -khtml-border-radius: 0.25rem;
+  //     border-radius: 0.25rem;
+  //     margin-right: 0.5rem;
 
-      font-weight: 400;
-      font-size: 0.875rem;
-      color: #323232;
-      background-color: #4caf51;
-    }
-  }
+  //     font-weight: 400;
+  //     font-size: 0.875rem;
+  //     color: #323232;
+  //     background-color: #4caf51;
+  //   }
+  // }
 
   &__tool-items {
     display: flex;
