@@ -20,9 +20,9 @@ const Articles = () => {
                 </Link>
                 <div className="blog__desc">
                   <div className="blog__date date-green">January 28, 2024</div>
-                  <div className="blog__title">
+                  <Link className="blog__title">
                     <span>Brand Identity with Code</span>
-                  </div>
+                  </Link>
                   <p className="blog__text">
                     Creating a digital representation of a brand’s values,
                     personality, and message through web design, user
@@ -38,9 +38,9 @@ const Articles = () => {
                 </Link>
                 <div className="blog__desc">
                   <div className="blog__date date-green">January 28, 2024</div>
-                  <div className="blog__title">
+                  <Link className="blog__title">
                     <span>Brand Identity with Code</span>
-                  </div>
+                  </Link>
                   <p className="blog__text">
                     Creating a digital representation of a brand’s values,
                     personality, and message through web design, user
@@ -56,9 +56,9 @@ const Articles = () => {
                 </Link>
                 <div className="blog__desc">
                   <div className="blog__date date-green">January 28, 2024</div>
-                  <div className="blog__title">
+                  <Link className="blog__title">
                     <span>Brand Identity with Code</span>
-                  </div>
+                  </Link>
                   <p className="blog__text">
                     Creating a digital representation of a brand’s values,
                     personality, and message through web design, user
@@ -74,9 +74,9 @@ const Articles = () => {
                 </Link>
                 <div className="blog__desc">
                   <div className="blog__date date-green">January 28, 2024</div>
-                  <div className="blog__title">
+                  <Link className="blog__title">
                     <span>Brand Identity with Code</span>
-                  </div>
+                  </Link>
                   <p className="blog__text">
                     Creating a digital representation of a brand’s values,
                     personality, and message through web design, user

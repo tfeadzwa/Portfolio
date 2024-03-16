@@ -1,13 +1,13 @@
 import { Outlet } from "react-router-dom";
 import Header from "../components/header/Header";
 import styled from "styled-components";
-import { Hero, Projects } from "../components";
+import { Profile, Projects } from "../components";
 import { CardInner } from "./CardInner";
 import { CardWrap } from "./CardWrap";
 
 const ProfileCard = styled.div`
   @media (min-width: 64em) {
-    flex: 1 0 40%;
+    flex: 1 0 30%;
   }
 `;
 
@@ -17,7 +17,7 @@ const Layout = () => {
       <Header />
       <main className="container">
         <ProfileCard>
-          <Hero />
+          <Profile />
         </ProfileCard>
 
         <CardInner>

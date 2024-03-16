@@ -17,28 +17,7 @@ const Projects = () => {
                 <Link className="projects__image-link">
                   <div className="projects__image">
                     <img src="/images/work-r2.jpg" />
-                  </div>
-                </Link>
-                <div className="projects__desc">
-                  <div className="projects__name">
-                    <span>CONTENT</span>
-                  </div>
-                  <div className="projects__title">
-                    <span>Cryptocurrency Dashboard Application</span>
-                    <a href="https://www.github.com/Tfeadzwa" target="_blank">
-                      <FontAwesomeIcon
-                        icon={["fab", "github"]}
-                        className="projects__git-icon"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div className="projects__item border-line-h pos-relative">
-                <Link className="projects__image-link">
-                  <div className="projects__image">
-                    <img src="/images/work3-1.jpg" />
+                    <span className="projects__img-txt">More info</span>
                   </div>
                 </Link>
                 <div className="projects__desc">
@@ -60,6 +39,7 @@ const Projects = () => {
                 <Link className="projects__image-link">
                   <div className="projects__image">
                     <img src="/images/work3-1.jpg" />
+                    <span className="projects__img-txt">More info</span>
                   </div>
                 </Link>
                 <div className="projects__desc">
@@ -81,6 +61,29 @@ const Projects = () => {
                 <Link className="projects__image-link">
                   <div className="projects__image">
                     <img src="/images/work3-1.jpg" />
+                    <span className="projects__img-txt">More info</span>
+                  </div>
+                </Link>
+                <div className="projects__desc">
+                  <div className="projects__name">
+                    <span>CONTENT</span>
+                  </div>
+                  <div className="projects__title">
+                    <span>Cryptocurrency Dashboard Application</span>
+                    <a href="https://www.github.com/Tfeadzwa" target="_blank">
+                      <FontAwesomeIcon
+                        icon={["fab", "github"]}
+                        className="projects__git-icon"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div className="projects__item border-line-h pos-relative">
+                <Link className="projects__image-link">
+                  <div className="projects__image">
+                    <img src="/images/work3-1.jpg" />
+                    <span className="projects__img-txt">More info</span>
                   </div>
                 </Link>
                 <div className="projects__desc">

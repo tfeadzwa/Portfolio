@@ -54,4 +54,7 @@ export const CardInner = styled.div`
 
   -webkit-backdrop-filter: blur(1rem);
   backdrop-filter: blur(1rem);
+
+  border-radius: 1.875rem;
+  -webkit-border-radius: 1.875rem;
 `;

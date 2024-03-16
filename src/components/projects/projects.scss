@@ -75,6 +75,10 @@
           -webkit-transform: scale(1.05);
           transform: scale(1.05);
         }
+
+        span {
+          opacity: 1;
+        }
       }
     }
   }
@@ -85,6 +89,21 @@
     overflow: hidden;
     border-radius: u.rem(20);
     height: u.rem(330);
+
+    span {
+      opacity: 0;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: u.$font-14;
+      color: var(--text-color-white);
+      transition: all 0.3s ease-in-out;
+      padding: 1rem;
+      border: 0.0625em solid silver;
+      border-radius: 0.25rem;
+      // background: rgba(76, 174, 81, 0.6);
+    }
 
     &::before {
       content: "";
