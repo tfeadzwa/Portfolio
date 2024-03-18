@@ -1,3 +1,4 @@
+import MapLocation from "./MapLocation";
 import "./contact.scss";
 
 const Contact = () => {
@@ -6,6 +7,10 @@ const Contact = () => {
       <div className="contact__container">
         <div className="contact__title title border-line-h pos-relative">
           <span>Get in Touch</span>
+        </div>
+
+        <div className="contact__map">
+          <MapLocation />
         </div>
 
         <div className="contact__details">
