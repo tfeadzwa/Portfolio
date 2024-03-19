@@ -12,22 +12,33 @@ const MapLocation = () => {
 
   return (
     <>
-      {/* <Map center={[51.505, -0.09]} zoom={13} height={300}>
-        <Marker anchor={[51.505, -0.09]} width={50} />
-      </Map> */}
-
       <Map
         provider={mapTiler}
         dprs={[1, 2]} // add this to support hidpi/retina (2x) maps if your provider supports them
         height={300}
-        defaultCenter={[50.879, 4.6997]}
+        // defaultCenter={[-17.817125, 31.0035711]}
+        defaultCenter={[-17.8265227, 31.0459521]}
         defaultZoom={13}
       >
-        <Marker anchor={[51.505, -0.09]} width={50} />
-        <ZoomControl />
+        -17.8163904,30.7450297
+        <Marker
+          // anchor={[-17.817125, 31.0035711]}
+          anchor={[-17.8265227, 31.0459521]}
+          width={50}
+          color={"#4caf51"}
+        />
+        <ZoomControl
+          style={{ right: 10, top: 10, zIndex: 100 }}
+          buttonStyle={{}}
+        />
       </Map>
     </>
   );
 };
 
 export default MapLocation;
+
+/*
+Latitude	-17.824858
+Longitude	31.053028
+*/

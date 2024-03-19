@@ -9,7 +9,7 @@ const Contact = () => {
           <span>Get in Touch</span>
         </div>
 
-        <div className="contact__map">
+        <div className="contact__map pos-relative">
           <MapLocation />
         </div>
 
