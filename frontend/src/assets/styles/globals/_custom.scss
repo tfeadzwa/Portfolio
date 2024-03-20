@@ -1,0 +1,276 @@
+@use "../utils/" as u;
+
+.border-lines-top {
+  &::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 0.0625em;
+
+    background: -webkit-radial-gradient(
+      top,
+      ellipse cover,
+      rgba(197, 202, 213, 0.15) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+    background: radial-gradient(
+      ellipse at top,
+      rgba(197, 202, 213, 0.15) 0%,
+      rgba(255, 255, 255, 0) 70%
+    );
+  }
+}
+
+.title {
+  margin: 0;
+  padding: 0 0 u.rem(30);
+  line-height: u.rem(21);
+  min-height: u.rem(51);
+  z-index: 2;
+
+  color: inherit;
+  font-weight: 700;
+  font-size: u.$font-21;
+  transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s,
+    transform var(--e-transform-transition-duration, 0.4s);
+  color: var(--wc-white);
+}
+
+.title,
+.content {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 1.875rem;
+    height: 1.875rem;
+    top: 0;
+    left: -0.625rem;
+    border-radius: 0.875rem;
+    background: linear-gradient(
+      135deg,
+      rgba(76, 175, 81, 0.4) 0%,
+      rgba(76, 175, 81, 0.01) 100%
+    );
+  }
+
+  &::first-letter {
+    color: #4caf51 !important;
+  }
+}
+
+.border-line-v::before {
+  content: "";
+  position: absolute;
+  left: -1.875rem;
+  width: 0.0625rem;
+  height: 100%;
+  background: -moz-radial-gradient(
+    top,
+    ellipse cover,
+    rgba(197, 202, 213, 0.15) 0%,
+    rgba(255, 255, 255, 0) 90%
+  );
+  background: -webkit-radial-gradient(
+    top,
+    ellipse cover,
+    rgba(197, 202, 213, 0.15) 0%,
+    rgba(255, 255, 255, 0) 90%
+  );
+  background: radial-gradient(
+    ellipse at top,
+    rgba(197, 202, 213, 0.15) 0%,
+    rgba(255, 255, 255, 0) 90%
+  );
+}
+
+.border-line-h::after {
+  content: "";
+  position: absolute;
+  left: -1.875rem;
+  right: 0;
+  bottom: 0;
+  height: 0.0625rem;
+  width: 100%;
+
+  background: -moz-radial-gradient(
+    left,
+    ellipse cover,
+    rgba(197, 202, 213, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  background: -webkit-radial-gradient(
+    left,
+    ellipse cover,
+    rgba(197, 202, 213, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+  background: radial-gradient(
+    ellipse at left,
+    rgba(197, 202, 213, 0.15) 0%,
+    rgba(255, 255, 255, 0) 70%
+  );
+}
+
+// .row::after {
+//   content: "";
+//   display: block;
+//   clear: both;
+// }
+
+.row,
+.col {
+  padding: 30px;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.flex {
+  display: flex;
+
+  &-dir-c {
+    flex-direction: column;
+  }
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-jc-c {
+    justify-content: center;
+  }
+
+  &-ai-c {
+    align-items: center;
+  }
+}
+
+.grid {
+  display: grid;
+
+  &-tc {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.line-timeline {
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0.0625rem;
+    top: 1.875rem;
+    bottom: 1.875rem;
+    background: rgba(197, 202, 213, 0.15);
+  }
+}
+
+.light-background {
+  //you can move margin and padding into seperate custom classes
+  margin: u.rem(30) 0 u.rem(30) u.rem(15);
+  padding: u.rem(20);
+
+  border: u.rem(1) solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  -webkit-border-radius: u.rem(20);
+  border-radius: u.rem(20);
+}
+
+// apply green color to date element of first item
+.date-green {
+  border-color: #4caf51;
+  color: #4caf51;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.info-list {
+  font-size: u.$font-17;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  word-break: break-word;
+  line-height: 1.25rem;
+  text-align: right;
+
+  strong {
+    float: left;
+    padding: 0.0625rem 0.5rem;
+    -moz-border-radius: 0.25rem;
+    -webkit-border-radius: 0.25rem;
+    -khtml-border-radius: 0.25rem;
+    border-radius: 0.25rem;
+    margin-right: 0.5rem;
+
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: #323232;
+    background-color: #4caf51;
+  }
+}
+
+input,
+textarea,
+.send-button,
+input[type="submit"] {
+  margin: 0;
+  padding: 0 u.rem(15);
+  display: block;
+  font-family: "Poppins";
+  font-size: u.$font-16;
+  width: 100%;
+  height: u.rem(50);
+  // color: #323232;
+  color: rgba(255, 255, 255, 0.9);
+  background: 0 0;
+  border: none;
+  outline: 0;
+  border: u.rem(2) solid rgb(238, 238, 238);
+  transition: all 0.3s ease 0s;
+}
+
+input,
+textarea,
+button {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+input,
+textarea,
+input[type="submit"] {
+  border-color: #666;
+}
+
+textarea {
+  &::placeholder {
+    color: #999;
+  }
+
+  appearance: none;
+  padding: u.rem(15);
+  height: u.rem(94);
+  line-height: 1.7;
+  font-size: u.$font-17;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  border-color: #4caf51;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+input:focus,
+textarea:focus {
+  color: #4caf51;
+  border: u.rem(2) solid #4caf51;
+}
