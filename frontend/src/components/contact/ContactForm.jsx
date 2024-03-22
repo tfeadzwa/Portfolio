@@ -46,9 +46,12 @@ const ContactForm = () => {
       }
 
       try {
-        const response = await axios.post("http://localhost:3500/post", {
-          token,
-        });
+        const response = await axios.post(
+          "https://portfolio-kh3y.onrender.com/post",
+          {
+            token,
+          }
+        );
         console.log(response);
 
         const emailResponse = await emailjs.send(

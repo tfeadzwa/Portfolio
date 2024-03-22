@@ -47,7 +47,7 @@ const Header = () => {
       <section className="header__container">
         <div className="header__profile">
           <div className="header__left">
-            <div className="header__title">Benjamin Ryan</div>
+            <div className="header__title">Tafadzwa Tanyanyiwa</div>
             <ReactTyped
               strings={[
                 "Full Stack Developer",
