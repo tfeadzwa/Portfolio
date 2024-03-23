@@ -90,9 +90,9 @@
       display: none;
     }
   }
-  
+
   &__title {
-    font-size: clamp(u.rem(12), u.rem(4) + 2vw, u.rem(12));
+    font-size: clamp(u.rem(15), u.rem(4) + 2vw, u.rem(16));
     color: var(--wc-white);
   }
 
@@ -101,7 +101,7 @@
   }
 
   &__subtitle {
-    font-size: clamp(u.rem(10), u.rem(4) + 2vw, u.rem(12));
+    font-size: u.rem(12);
     color: var(--wc-green);
   }
 
