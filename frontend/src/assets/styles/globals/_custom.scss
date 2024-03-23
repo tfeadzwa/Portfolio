@@ -1,5 +1,22 @@
 @use "../utils/" as u;
 
+::-webkit-scrollbar {
+  width: u.rem(6);
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.25);
+  // background-color: rgba(0, 0, 0, 0.5);
+  -webkit-border-radius: u.rem(6);
+  border-radius: u.rem(6);
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: none;
+  background-color: transparent;
+}
+
 .border-lines-top {
   &::before {
     content: "";
@@ -122,15 +139,15 @@
 
 .row,
 .col {
-  padding: 30px;
+  padding: u.rem(30);
   position: relative;
   display: inline-block;
   vertical-align: top;
 }
 
 .icon svg {
-  width: 34px;
-  height: 34px;
+  width: u.rem(34);
+  height: u.rem(34);
 }
 
 .flex {

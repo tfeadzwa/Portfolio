@@ -15,17 +15,19 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <main className="container">
-        <ProfileCard>
-          <Profile />
-        </ProfileCard>
+      <div style={{ display: "flex" }}>
+        <main className="container">
+          <ProfileCard>
+            <Profile />
+          </ProfileCard>
 
-        <CardInner>
-          <CardWrap>
-            <Outlet />
-          </CardWrap>
-        </CardInner>
-      </main>
+          <CardInner>
+            <CardWrap>
+              <Outlet />
+            </CardWrap>
+          </CardInner>
+        </main>
+      </div>
     </>
   );
 };
