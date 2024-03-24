@@ -1,7 +1,6 @@
 @use "../../assets/styles/utils/" as u;
 
 .contact {
-  height: 100dvh;
   color: var(--text-color-white);
 
   &__details {
@@ -12,8 +11,7 @@
   &__details-list {
     padding: 0 u.rem(30);
     padding-bottom: 4rem;
-    // 680px
-    @media (min-width: 42.5em) {
+    @media (min-width: u.rem(681)) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       column-gap: 2rem;
@@ -44,7 +42,7 @@
   }
 
   &__form-inputs {
-    @media (min-width: 42.5em) {
+    @media (min-width: u.rem(681)) {
       display: flex;
       column-gap: 1.5rem;
     }

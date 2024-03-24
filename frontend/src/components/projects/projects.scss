@@ -37,7 +37,7 @@
       left: -20px;
     }
 
-    @include u.breakpoints-up(medium) {
+    @media (min-width: u.rem(681)) {
       grid-template-columns: repeat(2, minmax(0, u.rem(400)));
       gap: 2.5rem;
     }
@@ -149,9 +149,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 0.5em;
     padding-top: u.rem(2);
     font-weight: 700;
-    font-size: u.$font-18;
+    font-size: u.$font-17;
     color: rgba(255, 255, 255, 0.9);
     word-break: break-word;
     -webkit-transition: all 0.3s ease 0s;
@@ -169,8 +170,8 @@
 
     a {
       color: rgba(255, 255, 255, 0.9);
-      padding: u.rem(8);
-      border-radius: u.rem(10);
+      padding: u.rem(16);
+      border-radius: u.rem(16);
       border: u.rem(1) solid rgba(255, 255, 255, 0.2);
     }
   }
