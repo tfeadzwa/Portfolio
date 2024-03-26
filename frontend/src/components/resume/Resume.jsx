@@ -31,7 +31,7 @@ const Resume = () => {
           <div className="resume__items line-timeline">
             <div className="resume__item light-background border-line-h pos-relative">
               <div className="resume__item-image">
-                <img src="/images/brand3.png" alt="company logo" />
+                <img src="/images/zimbotech-logo.png" alt="company logo" />
               </div>
 
               <div className="resume__item-date date-green">
@@ -40,10 +40,10 @@ const Resume = () => {
               <div className="resume__item-name">
                 <span>Software Developer</span>
               </div>
-              <div className="resume__company">Google Inc.</div>
+              <div className="resume__company">Zimbotech (Pvt) Ltd</div>
               <div className="resume__single-post-text">
                 <p>
-                  applied the engineering design process to design, develop,
+                  Applied the engineering design process to design, develop,
                   test, maintain, and evaluate software.
                 </p>
               </div>
@@ -62,7 +62,7 @@ const Resume = () => {
 
             <div className="resume__item light-background border-line-h pos-relative">
               <div className="resume__item-image">
-                <img src="/images/brand3.png" alt="company logo" />
+                <img src="/images/outlook-tech-logo.png" alt="company logo" />
               </div>
 
               <div className="resume__item-date">
@@ -71,7 +71,9 @@ const Resume = () => {
               <div className="resume__item-name">
                 <span>Software Developer</span>
               </div>
-              <div className="resume__company">Google Inc.</div>
+              <div className="resume__company">
+                Outlook Technologies (Pvt) Ltd
+              </div>
               <div className="resume__single-post-text">
                 <p>
                   applied the engineering design process to design, develop,
@@ -180,9 +182,9 @@ const Resume = () => {
               <div className="resume__company">Mt Darwin</div>
               <div className="resume__single-post-text">
                 <p>
-                  ZGCE Advanced Level, a Zimbabwe General Certificate of
-                  Education Examination at Advanced Level. Attained 3 'A' Level
-                  passes with a total of &#39;9&#39; points in Arts.
+                  ZIMSEC General Certificate of Education Advanced Level.
+                  Attained 3 &#39;A-Levels&#39; passes with a total of
+                  &#39;9&#39; points in Arts.
                 </p>
               </div>
               <a
@@ -208,16 +210,16 @@ const Resume = () => {
               <div className="resume__company">Mt Darwin</div>
               <div className="resume__single-post-text">
                 <p>
-                  Zimsec Ordinary Level, a Zimbabwe General Certificate of
-                  Education Examination at at Ordinary level. Attained a total
-                  of 7 &#39;O&#39; Level passes including Mathematics and
+                  ZIMSEC General Certificate of Education Ordinary Level.
+                  Attained 7 &#39;O-Levels&#39; passes including Mathematics and
                   English.
                 </p>
               </div>
               <a
                 className="resume__link"
                 target="_blank"
-                href="https://www.linkedin.com/"
+                href="/images/pdfs/Tafadzwa-Software-Developer.pdf"
+                download="Tafadzwa's Resume"
               >
                 <span className="resume__text">CERTIFICATE</span>
                 <FontAwesomeIcon
