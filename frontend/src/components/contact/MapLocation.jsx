@@ -16,9 +16,8 @@ const MapLocation = () => {
         provider={mapTiler}
         dprs={[1, 2]} // add this to support hidpi/retina (2x) maps if your provider supports them
         height={300}
-        // defaultCenter={[-17.817125, 31.0035711]}
         // defaultCenter={[-17.8265227, 31.0459521]}
-        defaultCenter={[-17.8198998, 30.9753902]}
+        // defaultCenter={[-17.8198998, 30.9753902]}
         defaultZoom={12}
         attribution={false}
       >

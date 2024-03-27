@@ -4,8 +4,24 @@ import Layout from "./layouts/Layout";
 import { Articles, Contact, Profile, Resume, About } from "./components";
 import AnimatedCursor from "react-animated-cursor";
 import projectRoutes from "./components/projects/projectRoutes";
+import { useState, useEffect } from "react";
+import Loading from "./components/loading/Loading";
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate an API call
+
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
+
+  if (isLoading) {
+    return <Loading />;
+  }
+
   return (
     <div className="App" style={{ height: "100dvh" }}>
       <AnimatedCursor

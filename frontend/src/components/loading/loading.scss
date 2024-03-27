@@ -1,0 +1,17 @@
+.loading {
+  display: flex;
+  height: 100dvh;
+  align-items: center;
+  justify-content: center;
+
+  &__icon {
+    height: 4rem;
+    animation: rotate-onload 2s linear infinite;
+
+    @keyframes rotate-onload {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}

@@ -143,7 +143,7 @@
     margin-top: 2rem;
     text-align: center;
 
-    button {
+    a {
       cursor: pointer;
       width: 100%;
       line-height: u.rem(70);
@@ -163,7 +163,7 @@
       }
     }
 
-    button:hover {
+    a:hover {
       svg {
         color: #4caf51;
         transform: translateY(u.rem(-2.5));

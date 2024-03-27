@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { ReactTyped } from "react-typed";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./profile.scss";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   return (
@@ -63,22 +64,25 @@ const Profile = () => {
               </div>
             </div>
             <div className="profile__download-contact border-line-h">
-              <button
+              <a
                 type="button"
                 id="download-btn"
                 className="profile__download-btn"
+                href="/images/tafadzwa-resume.pdf"
+                download="Tafadzwa Tanyanyiwa's Resume"
               >
                 <span>DOWNLOAD CV</span>
                 <FontAwesomeIcon icon="cloud-arrow-down" />
-              </button>
-              <button
+              </a>
+              <Link
+                to="/Contact"
                 type="button"
                 id="contact-btn"
                 className="profile__contact-btn"
               >
                 <span>CONTACT</span>
                 <FontAwesomeIcon icon="phone" />
-              </button>
+              </Link>
             </div>
           </div>
         </div>
