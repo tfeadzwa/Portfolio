@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./resume.scss";
+import { useState } from "react";
 
 const Resume = () => {
   return (
@@ -159,12 +160,9 @@ const Resume = () => {
                   focuses on information systems design.
                 </p>
               </div>
-              <a
-                className="resume__link"
-                target="_blank"
-                href="https://www.linkedin.com/"
-              >
+              <a className="resume__link" href="#">
                 <span className="resume__text">CERTIFICATE</span>
+
                 <FontAwesomeIcon
                   icon="angle-right"
                   className="resume__right-arrow"
