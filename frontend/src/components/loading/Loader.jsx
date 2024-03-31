@@ -1,16 +1,18 @@
+import styled from "styled-components";
 import SunspotLoader from "./SunspotLoader";
+
+const Section = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  height: 100dvh;
+  background-color: rgba(26, 32, 44, 0.85);
+`;
 
 const Loader = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100dvh",
-        backgroundColor: "rgba(26, 32, 44, 0.85)",
-      }}
-    >
+    <Section>
       <SunspotLoader
         // gradientColors={["#6366F1", "#E0E7FF"]}
         gradientColors={["#4caf51"]}
@@ -19,7 +21,7 @@ const Loader = () => {
         desktopSize={"50px"}
         mobileSize={"40px"}
       />
-    </div>
+    </Section>
   );
 };
 
