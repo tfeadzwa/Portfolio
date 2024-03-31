@@ -5,7 +5,7 @@ import { Articles, Contact, Profile, Resume, About } from "./components";
 import AnimatedCursor from "react-animated-cursor";
 import projectRoutes from "./components/projects/projectRoutes";
 import { useState, useEffect } from "react";
-import Loading from "./components/loading/Loading";
+import Loader from "./components/loading/Loader";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,7 +19,7 @@ function App() {
   }, []);
 
   if (isLoading) {
-    return <Loading />;
+    return <Loader />;
   }
 
   return (
