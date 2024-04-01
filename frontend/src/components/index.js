@@ -5,3 +5,5 @@ export { default as Projects } from "./projects/Projects";
 export { default as Resume } from "./resume/Resume";
 export { default as Contact } from "./contact/Contact";
 export { default as Articles } from "./articles/Articles";
+export { default as Loader } from "./loading/Loader.jsx";
+export { default as Sidebar } from "./sidebar/Sidebar.jsx";

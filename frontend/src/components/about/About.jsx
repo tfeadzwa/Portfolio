@@ -15,7 +15,7 @@ const About = () => {
             <p>
               Hey, there 👋 I&#39;m Tafadzwa, a Software developer and Data
               scientist with over 1.5+ years of experience, specialising in Java
-              and React. Also I proficient at using tools and programming
+              and React. Also I&#39;m proficient at using tools and programming
               languages such as Python or SQL to manipulate and analyze data.
             </p>
           </div>

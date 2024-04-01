@@ -4,9 +4,11 @@ import styled from "styled-components";
 import { gsap } from "gsap";
 
 const StyledDiv = styled.div`
-  width: ${(props) => props.sizeSVG}px;
-  height: ${(props) => props.sizeSVG}px;
-  background: ${(props) => props.background};
+  ${({ sizesvg, ...props }) => `
+    width: ${sizesvg}px;
+    height: ${sizesvg}px;
+    ${props.background ? `background: ${props.background};` : ""}
+  `}
 `;
 
 const StyledSVG = styled.svg`
@@ -59,7 +61,7 @@ const SunspotLoader = ({
   }
 
   let sizePassed = parseFloat(sizeFound);
-  let sizeSVG = (sizePassed * 150) / 64;
+  let sizesvg = (sizePassed * 150) / 64;
 
   useEffect(() => {
     let select = (s) => document.querySelector(s),
@@ -115,7 +117,7 @@ const SunspotLoader = ({
   }, []);
 
   return (
-    <StyledDiv sizeSVG={sizeSVG} background={background} className={className}>
+    <StyledDiv sizesvg={sizesvg} background={background} className={className}>
       <StyledSVG
         id="mainSVG"
         xmlns="http://www.w3.org/2000/svg"

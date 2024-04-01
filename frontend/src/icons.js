@@ -1,0 +1,44 @@
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+
+import {
+  faCircleUser,
+  faFileLines,
+  faEnvelope,
+  faComments,
+  faSun,
+  faMicrochip,
+  faBriefcase,
+  faMoon,
+  faCloudArrowDown,
+  faPhone,
+  faDatabase,
+  faAngleRight,
+  faLanguage,
+  faFlagUsa,
+  faFan,
+  faClose,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
+
+// Add only the icons you need to the library
+library.add(
+  faFan,
+  faSearch,
+  faFlagUsa,
+  fab,
+  faCircleUser,
+  faFileLines,
+  faEnvelope,
+  faComments,
+  faSun,
+  faMicrochip,
+  faBriefcase,
+  faMoon,
+  faCloudArrowDown,
+  faPhone,
+  faDatabase,
+  faAngleRight,
+  faLanguage,
+  faClose
+);

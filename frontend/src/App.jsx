@@ -6,6 +6,7 @@ import AnimatedCursor from "react-animated-cursor";
 import projectRoutes from "./components/projects/projectRoutes";
 import { useState, useEffect } from "react";
 import Loader from "./components/loading/Loader";
+import "./icons";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);

@@ -19,7 +19,7 @@ const Loader = () => {
         // shadowColor={"#3730A3"}
         shadowColor={"#3730A3"}
         desktopSize={"50px"}
-        mobileSize={"40px"}
+        mobileSize={"35px"}
       />
     </Section>
   );

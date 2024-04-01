@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./resume.scss";
-import { useState } from "react";
 
 const Resume = () => {
   return (
@@ -36,7 +35,7 @@ const Resume = () => {
               </div>
 
               <div className="resume__item-date date-green">
-                <span>2022 - Present</span>
+                <span>June 2022 - May 2023</span>
               </div>
               <div className="resume__item-name">
                 <span>Software Developer</span>
@@ -67,7 +66,7 @@ const Resume = () => {
               </div>
 
               <div className="resume__item-date">
-                <span>2022 - Present</span>
+                <span>January 2021 - May 2022</span>
               </div>
               <div className="resume__item-name">
                 <span>Software Developer</span>
@@ -93,7 +92,8 @@ const Resume = () => {
                 />
               </a>
             </div>
-            <div className="resume__item light-background border-line-h pos-relative">
+
+            {/* <div className="resume__item light-background border-line-h pos-relative">
               <div className="resume__item-image">
                 <img src="/images/brand3.png" alt="company logo" />
               </div>
@@ -122,7 +122,7 @@ const Resume = () => {
                   className="resume__right-arrow"
                 />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 
