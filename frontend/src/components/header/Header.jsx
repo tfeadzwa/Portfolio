@@ -4,16 +4,35 @@ import { NavLink } from "react-router-dom";
 import "./header.scss";
 import { useState } from "react";
 import Sidebar from "../sidebar/Sidebar";
+import styled from "styled-components";
+
+const DivOverlay = styled.div`
+  position: fixed;
+  display: ${(props) => props.display};
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  z-index: 106;
+  opacity: 0.6;
+`;
 
 const Header = () => {
   const [showSidebar, setShowSidebar] = useState(false);
+
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
 
   return (
     <>
-      {showSidebar && <Sidebar onClose={toggleSidebar} />}
+      <DivOverlay
+        className="overlay"
+        display={showSidebar ? "block" : "none"}
+      ></DivOverlay>
+
+      {<Sidebar onClose={toggleSidebar} left={showSidebar ? 0 : -438} />}
 
       <header className="header w-btn-hide">
         <section className="header__container">

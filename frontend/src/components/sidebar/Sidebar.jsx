@@ -1,10 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PropTypes from "prop-types";
 import "./sidebar.scss";
+import styled from "styled-components";
 
-const Sidebar = ({ onClose }) => {
+const DivSidebar = styled.div`
+  left: ${(props) => props.left};
+`;
+
+const Sidebar = ({ onClose, left }) => {
   return (
-    <div className="sidebar">
+    <DivSidebar className="sidebar" left={left + "px"}>
       <div className="sidebar__wrap">
         <aside className="sidebar__aside">
           <section className="sidebar__search">
@@ -97,12 +102,13 @@ const Sidebar = ({ onClose }) => {
       <span className="sidebar__close" onClick={onClose}>
         {/* <FontAwesomeIcon icon="close" className="sidebar__icon" /> */}
       </span>
-    </div>
+    </DivSidebar>
   );
 };
 
 Sidebar.propTypes = {
   onClose: PropTypes.func.isRequired,
+  left: PropTypes.number.isRequired,
 };
 
 export default Sidebar;

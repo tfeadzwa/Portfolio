@@ -3,10 +3,10 @@
 .sidebar {
   position: fixed;
   top: 0;
-  //   left: -438px;
+  left: -438px;
   width: u.rem(338);
   height: 100%;
-  z-index: 10001;
+  z-index: 110;
   -moz-transition: all 0.6s ease 0s;
   -webkit-transition: all 0.6s ease 0s;
   -o-transition: all 0.6s ease 0s;
