@@ -108,9 +108,3 @@ const Header = () => {
 };
 
 export default Header;
-
-/*
-can you create a sidebar menu component that is being rendered in react inside a header component whenever a user clicks a hamburger button. 
-The sidebar component is a seperate component that has a close span button. When a user clicks the hamburger menu button, open the sidebarmenu.
-When a user clicks the close button in sidebar component, then close the sidebar menu.
-*/

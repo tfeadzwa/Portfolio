@@ -2,14 +2,15 @@ import { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 import { gsap } from "gsap";
+import PropTypes from "prop-types";
 
-const StyledDiv = styled.div`
-  ${({ sizesvg, ...props }) => `
-    width: ${sizesvg}px;
-    height: ${sizesvg}px;
-    ${props.background ? `background: ${props.background};` : ""}
-  `}
-`;
+const StyledDiv = styled.div.attrs((props) => ({
+  style: {
+    width: `${props.$sizesvg}px`,
+    height: `${props.$sizesvg}px`,
+    background: props.$background || "transparent",
+  },
+}))``;
 
 const StyledSVG = styled.svg`
   width: 100%;
@@ -117,7 +118,11 @@ const SunspotLoader = ({
   }, []);
 
   return (
-    <StyledDiv sizesvg={sizesvg} background={background} className={className}>
+    <StyledDiv
+      $sizesvg={sizesvg}
+      $background={background}
+      className={className}
+    >
       <StyledSVG
         id="mainSVG"
         xmlns="http://www.w3.org/2000/svg"
@@ -182,6 +187,17 @@ const SunspotLoader = ({
       </StyledSVG>
     </StyledDiv>
   );
+};
+
+SunspotLoader.propTypes = {
+  className: PropTypes.string,
+  background: PropTypes.string,
+  gradientColors: PropTypes.array,
+  shadowColor: PropTypes.string,
+  shadowOpacity: PropTypes.string,
+  size: PropTypes.number,
+  desktopSize: PropTypes.string,
+  mobileSize: PropTypes.string,
 };
 
 export default SunspotLoader;

@@ -4,12 +4,12 @@ import "./sidebar.scss";
 import styled from "styled-components";
 
 const DivSidebar = styled.div`
-  left: ${(props) => props.left};
+  left: ${(props) => props.$left};
 `;
 
 const Sidebar = ({ onClose, left }) => {
   return (
-    <DivSidebar className="sidebar" left={left + "px"}>
+    <DivSidebar className="sidebar" $left={left + "px"}>
       <div className="sidebar__wrap">
         <aside className="sidebar__aside">
           <section className="sidebar__search">
