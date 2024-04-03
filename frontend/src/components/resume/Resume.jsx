@@ -69,7 +69,7 @@ const Resume = () => {
               </div>
 
               <div className="resume__item-date">
-                <span>January 2021 - May 2022</span>
+                <span>Jan 2021 - May 2022</span>
               </div>
               <div className="resume__item-name">
                 <span>Software Developer</span>
