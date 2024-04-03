@@ -1,7 +1,10 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./resume.scss";
+import { useMyContext } from "../../provider/useMyContext";
 
 const Resume = () => {
+  const { setImgSrc, toggleImgOpen } = useMyContext();
+
   return (
     <section className="resume pos-relative">
       <div className="resume__title title border-line-h pos-relative">
@@ -160,7 +163,13 @@ const Resume = () => {
                   focuses on information systems design.
                 </p>
               </div>
-              <a className="resume__link" href="#">
+              <a
+                className="resume__link"
+                onClick={() => {
+                  setImgSrc("/images/certificate-degree.jpg");
+                  toggleImgOpen();
+                }}
+              >
                 <span className="resume__text">CERTIFICATE</span>
 
                 <FontAwesomeIcon
@@ -187,8 +196,10 @@ const Resume = () => {
               </div>
               <a
                 className="resume__link"
-                target="_blank"
-                href="https://www.linkedin.com/"
+                onClick={() => {
+                  setImgSrc("/images/.jpg");
+                  toggleImgOpen();
+                }}
               >
                 <span className="resume__text">CERTIFICATE</span>
                 <FontAwesomeIcon
@@ -215,11 +226,12 @@ const Resume = () => {
               </div>
               <a
                 className="resume__link"
-                target="_blank"
-                href="/images/pdfs/Tafadzwa-Software-Developer.pdf"
-                download="Tafadzwa's Resume"
+                onClick={() => {
+                  setImgSrc("/images/stack.png");
+                  toggleImgOpen();
+                }}
               >
-                <span className="resume__text">CERTIFICATE</span>
+                <span>CERTIFICATE</span>
                 <FontAwesomeIcon
                   icon="angle-right"
                   className="resume__right-arrow"

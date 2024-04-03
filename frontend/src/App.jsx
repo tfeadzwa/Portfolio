@@ -7,6 +7,7 @@ import projectRoutes from "./components/projects/projectRoutes";
 import { useState, useEffect } from "react";
 import Loader from "./components/loading/Loader";
 import "./icons";
+import { MyProvider } from "./provider/MyContext";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -57,22 +58,24 @@ function App() {
           ]}
         />
 
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="home" element={<Home />} />
+        <MyProvider>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="home" element={<Home />} />
 
-            <Route path="/">
-              <Route index element={<Profile />} />
-              <Route path="about" element={<About />} />
-              <Route path="resume" element={<Resume />} />
+              <Route path="/">
+                <Route index element={<Profile />} />
+                <Route path="about" element={<About />} />
+                <Route path="resume" element={<Resume />} />
 
-              {projectRoutes}
-              <Route path="articles" element={<Articles />} />
-              <Route path="contact" element={<Contact />} />
+                {projectRoutes}
+                <Route path="articles" element={<Articles />} />
+                <Route path="contact" element={<Contact />} />
+              </Route>
             </Route>
-          </Route>
-        </Routes>
+          </Routes>
+        </MyProvider>
       </div>
     </>
   );

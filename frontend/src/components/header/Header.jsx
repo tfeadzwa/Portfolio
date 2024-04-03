@@ -30,6 +30,7 @@ const Header = () => {
       <DivOverlay
         className="overlay"
         display={showSidebar ? "block" : "none"}
+        onClick={() => setShowSidebar(false)}
       ></DivOverlay>
 
       {<Sidebar onClose={toggleSidebar} left={showSidebar ? 0 : -438} />}

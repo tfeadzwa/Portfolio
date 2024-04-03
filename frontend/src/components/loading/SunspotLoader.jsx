@@ -6,8 +6,8 @@ import PropTypes from "prop-types";
 
 const StyledDiv = styled.div.attrs((props) => ({
   style: {
-    width: `${props.$sizesvg}px`,
-    height: `${props.$sizesvg}px`,
+    width: `${props.$sizeSVG}px`,
+    height: `${props.$sizeSVG}px`,
     background: props.$background || "transparent",
   },
 }))``;
@@ -62,12 +62,10 @@ const SunspotLoader = ({
   }
 
   let sizePassed = parseFloat(sizeFound);
-  let sizesvg = (sizePassed * 150) / 64;
+  let sizeSVG = (sizePassed * 150) / 64;
 
   useEffect(() => {
     let select = (s) => document.querySelector(s),
-      selectAll = (s) => document.querySelectorAll(s),
-      mainSVG = select("#mainSVG"),
       container = select("#container"),
       seg = select(".seg"),
       allSegs = [];
@@ -119,7 +117,7 @@ const SunspotLoader = ({
 
   return (
     <StyledDiv
-      $sizesvg={sizesvg}
+      $sizeSVG={sizeSVG}
       $background={background}
       className={className}
     >
