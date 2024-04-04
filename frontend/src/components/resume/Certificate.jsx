@@ -77,14 +77,20 @@ const Certificate = () => {
         <DivCert>
           <Image $zoom={zoomLevel + "%"} src={imgSrc} alt="Certificate" />
           <CustomizeImg>
-            {/* <FontAwesomeIcon icon="expand" /> */}
-            <FontAwesomeIcon icon="download" />
+            <a
+              target="_blank"
+              href={imgSrc}
+              download="Tafadzwa Tanyanyiwa's Resume"
+              style={{ color: "#fff" }}
+            >
+              <FontAwesomeIcon icon="download" />
+            </a>
             <FontAwesomeIcon
               icon="search-minus"
               onClick={zoomOut}
               style={{
                 display: zoomLevel > 90 ? "block" : "none",
-                animation: "transitioon: all 0.3s ease",
+                transition: "all 0.5s ease",
               }}
             />
             <FontAwesomeIcon icon="search-plus" onClick={zoomIn} />

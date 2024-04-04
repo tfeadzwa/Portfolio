@@ -197,7 +197,7 @@ const Resume = () => {
               <a
                 className="resume__link"
                 onClick={() => {
-                  setImgSrc("/images/.jpg");
+                  setImgSrc("/images/other.jpg");
                   toggleImgOpen();
                 }}
               >

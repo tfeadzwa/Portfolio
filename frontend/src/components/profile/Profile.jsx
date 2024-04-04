@@ -68,7 +68,7 @@ const Profile = () => {
                 type="button"
                 id="download-btn"
                 className="profile__download-btn"
-                href="/images/tafadzwa-resume.pdf"
+                href="/pdfs/tafadzwa-resume.pdf"
                 download="Tafadzwa Tanyanyiwa's Resume"
               >
                 <span>DOWNLOAD CV</span>
