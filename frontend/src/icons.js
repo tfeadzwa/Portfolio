@@ -21,6 +21,8 @@ import {
   faSearch,
   faSearchPlus,
   faExpand,
+  faSearchMinus,
+  faDownload,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add only the icons you need to the library
@@ -44,5 +46,7 @@ library.add(
   faLanguage,
   faClose,
   faSearchPlus,
-  faExpand
+  faExpand,
+  faSearchMinus,
+  faDownload
 );

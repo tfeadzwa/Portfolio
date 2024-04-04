@@ -61,10 +61,14 @@ const CustomizeImg = styled.div`
 
 const Certificate = () => {
   const { imgSrc, toggleImgOpen } = useMyContext();
-  const [zoomLevel, setZoomlevel] = useState(82);
+  const [zoomLevel, setZoomlevel] = useState(85);
 
-  const zoom = () => {
+  const zoomIn = () => {
     zoomLevel !== 200 && setZoomlevel((prevZoomLevel) => prevZoomLevel + 10);
+  };
+
+  const zoomOut = () => {
+    zoomLevel !== 85 && setZoomlevel((prevZoomLevel) => prevZoomLevel - 10);
   };
 
   return (
@@ -73,8 +77,17 @@ const Certificate = () => {
         <DivCert>
           <Image $zoom={zoomLevel + "%"} src={imgSrc} alt="Certificate" />
           <CustomizeImg>
-            <FontAwesomeIcon icon="expand" />
-            <FontAwesomeIcon icon="search-plus" onClick={zoom} />
+            {/* <FontAwesomeIcon icon="expand" /> */}
+            <FontAwesomeIcon icon="download" />
+            <FontAwesomeIcon
+              icon="search-minus"
+              onClick={zoomOut}
+              style={{
+                display: zoomLevel > 90 ? "block" : "none",
+                animation: "transitioon: all 0.3s ease",
+              }}
+            />
+            <FontAwesomeIcon icon="search-plus" onClick={zoomIn} />
             <FontAwesomeIcon icon="close" onClick={toggleImgOpen} />
           </CustomizeImg>
         </DivCert>
