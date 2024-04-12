@@ -3,6 +3,7 @@
 .resume {
   color: var(--wc-white);
   //   line-height: 1.7;
+  animation: onActiveAnimation 1.5s linear forwards;
 
   // override the default horizontal line style for experience section
   &__experience .border-line-h,

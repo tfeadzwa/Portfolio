@@ -23,6 +23,9 @@ import {
   faExpand,
   faSearchMinus,
   faDownload,
+  faCircleChevronRight,
+  faCircleChevronLeft,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 
 // Add only the icons you need to the library
@@ -48,5 +51,8 @@ library.add(
   faSearchPlus,
   faExpand,
   faSearchMinus,
-  faDownload
+  faDownload,
+  faCircleChevronRight,
+  faCircleChevronLeft,
+  faGlobe
 );

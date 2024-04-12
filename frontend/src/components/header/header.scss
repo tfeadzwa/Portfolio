@@ -9,6 +9,8 @@
   padding-inline: 1rem;
   background-color: var(--e-global-background-color);
 
+  animation: onActiveAnimation 1s linear forwards;
+
   @include u.breakpoints-up(medium) {
     float: left;
     width: fit-content;

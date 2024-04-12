@@ -9,7 +9,7 @@ const DivSidebar = styled.div`
 
 const Sidebar = ({ onClose, left }) => {
   return (
-    <DivSidebar className="sidebar" $left={left}>
+    <DivSidebar $left={left} className="sidebar">
       <div className="sidebar__wrap">
         <aside className="sidebar__aside">
           <section className="sidebar__search">

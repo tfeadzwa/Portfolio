@@ -166,7 +166,7 @@ const Resume = () => {
               <a
                 className="resume__link"
                 onClick={() => {
-                  setImgSrc("/images/certificate-degree.jpg");
+                  setImgSrc(["/images/certificate-degree.jpg"]);
                   toggleImgOpen();
                 }}
               >
@@ -197,7 +197,7 @@ const Resume = () => {
               <a
                 className="resume__link"
                 onClick={() => {
-                  setImgSrc("/images/other.jpg");
+                  setImgSrc(["/images/other.jpg"]);
                   toggleImgOpen();
                 }}
               >
@@ -227,7 +227,7 @@ const Resume = () => {
               <a
                 className="resume__link"
                 onClick={() => {
-                  setImgSrc("/images/certificate-olevel.jpg");
+                  setImgSrc(["/images/certificate-olevel.jpg"]);
                   toggleImgOpen();
                 }}
               >

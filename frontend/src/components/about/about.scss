@@ -4,6 +4,7 @@
   width: 100%;
   color: #cecece;
   // background: #14181a;
+  animation: onActiveAnimation 1s linear forwards;
 
   &__container {
     display: flex;
@@ -63,7 +64,7 @@
   //     -khtml-border-radius: 0.25rem;
   //     border-radius: 0.25rem;
   //     margin-right: 0.5rem;
-
+  
   //     font-weight: 400;
   //     font-size: 0.875rem;
   //     color: #323232;

@@ -34,6 +34,25 @@ const Image = styled.img`
   max-height: ${(props) => props.$zoom};
   height: auto; /* Allow the height to adjust proportionally */
   transition: all 0.3s ease;
+  animation: imageAnimation 0.5s ease-in-out forwards;
+
+  @keyframes imageAnimation {
+    0% {
+      -webkit-transform: scale(0.2);
+      transform: scale(0.2);
+      opacity: 0.5;
+    }
+
+    50% {
+      opacity: 0.8;
+    }
+
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 `;
 
 const CustomizeImg = styled.div`
@@ -62,6 +81,9 @@ const CustomizeImg = styled.div`
 const Certificate = () => {
   const { imgSrc, toggleImgOpen } = useMyContext();
   const [zoomLevel, setZoomlevel] = useState(85);
+  const [imgIndex, setImgIndex] = useState(0);
+
+  console.log(imgIndex);
 
   const zoomIn = () => {
     zoomLevel !== 200 && setZoomlevel((prevZoomLevel) => prevZoomLevel + 10);
@@ -71,20 +93,57 @@ const Certificate = () => {
     zoomLevel !== 85 && setZoomlevel((prevZoomLevel) => prevZoomLevel - 10);
   };
 
+  const nextImg = () => {
+    imgIndex < imgSrc.length - 1 && setImgIndex(imgIndex + 1);
+  };
+
+  const prevImg = () => {
+    imgIndex > 0 && setImgIndex(imgIndex - 1);
+  };
+
   return (
     <>
       <DivOverlay>
         <DivCert>
-          <Image $zoom={zoomLevel + "%"} src={imgSrc} alt="Certificate" />
+          {/* <Image $zoom={zoomLevel + "%"} src={imgSrc} alt="Certificate" /> */}
+
+          <FontAwesomeIcon
+            icon="circle-chevron-left"
+            onClick={prevImg}
+            style={{
+              paddingRight: "0.5rem",
+              fontSize: "1.75rem",
+              cursor: "pointer",
+              display: imgSrc.length > 1 ? "block" : "none",
+            }}
+          />
+          <Image
+            $zoom={zoomLevel + "%"}
+            src={imgSrc[imgIndex]}
+            alt="Certificate"
+          />
+          <FontAwesomeIcon
+            icon="circle-chevron-right"
+            onClick={nextImg}
+            style={{
+              paddingLeft: "0.5rem",
+              fontSize: "1.75rem",
+              cursor: "pointer",
+              display: imgSrc.length > 1 ? "block" : "none",
+            }}
+          />
+
           <CustomizeImg>
             <a
-              target="_blank"
               href={imgSrc}
-              download="Tafadzwa Tanyanyiwa's Resume"
+              alt="Image description"
+              target="_blank"
               style={{ color: "#fff" }}
+              // download={imgSrc}
             >
               <FontAwesomeIcon icon="download" />
             </a>
+
             <FontAwesomeIcon
               icon="search-minus"
               onClick={zoomOut}

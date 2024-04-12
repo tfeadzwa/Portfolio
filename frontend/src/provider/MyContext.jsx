@@ -4,7 +4,7 @@ import { createContext, useState } from "react";
 const MyContext = createContext();
 
 export const MyProvider = ({ children }) => {
-  const [imgSrc, setImgSrc] = useState("");
+  const [imgSrc, setImgSrc] = useState([]);
   const [imgOpen, setImgOpen] = useState(false);
 
   const toggleImgOpen = () => {

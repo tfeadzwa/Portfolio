@@ -2,6 +2,7 @@
 
 .blog {
   color: var(--text-color-white);
+  animation: onActiveAnimation 1s linear forwards;
 
   &__items-container {
     margin: 0 u.rem(-30);

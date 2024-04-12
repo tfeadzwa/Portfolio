@@ -2,6 +2,7 @@
 
 .contact {
   color: var(--text-color-white);
+  animation: onActiveAnimation 1s linear forwards;
 
   &__details {
     margin: 0 u.rem(-30);

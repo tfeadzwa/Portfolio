@@ -5,7 +5,6 @@ import { Profile } from "../components";
 import { CardInner } from "./CardInner";
 import { CardWrap } from "./CardWrap";
 import Certificate from "../components/resume/Certificate";
-
 import { useMyContext } from "../provider/useMyContext";
 
 const ProfileCard = styled.div`
