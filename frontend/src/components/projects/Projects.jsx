@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Info from "./Info";
 import getAllProjectList from "../../utils/GlobalApi";
+import Markdown from "react-markdown";
 
 const Projects = () => {
   const [infoPageOpen, setInfoPageOpen] = useState(false);
@@ -59,7 +60,9 @@ const Projects = () => {
                         <span>{project?.title}</span>
                       </div>
                       <div className="projects__title">
-                        <span>{project?.info}</span>
+                        <span>
+                          <Markdown>{project?.info}</Markdown>
+                        </span>
                         <a
                           href="https://www.github.com/Tfeadzwa"
                           target="_blank"

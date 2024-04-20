@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Infor from "./Infor";
 import PropTypes from "prop-types";
+import Markdown from "react-markdown";
 
 const Info = ({ closeInfo, projectItem }) => {
   return (
@@ -21,7 +22,9 @@ const Info = ({ closeInfo, projectItem }) => {
                 {projectItem?.title}
               </div>
               <div className="info__project-info">Project Info:</div>
-              <p>{projectItem?.info}</p>
+              <p>
+                <Markdown>{projectItem?.info}</Markdown>
+              </p>
             </div>
             <div className="info__tools">
               <div className="info__tools-title pos-relative">
