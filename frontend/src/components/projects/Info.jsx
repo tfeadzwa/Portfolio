@@ -17,9 +17,11 @@ const Info = ({ closeInfo, projectItem }) => {
           </div>
           <div className="info__text-content">
             <div className="info__text-desc">
-              <div className="info__title title pos-relative">MenCruit</div>
+              <div className="info__title title pos-relative">
+                {projectItem?.title}
+              </div>
               <div className="info__project-info">Project Info:</div>
-              <p></p>
+              <p>{projectItem?.info}</p>
             </div>
             <div className="info__tools">
               <div className="info__tools-title pos-relative">
@@ -28,7 +30,10 @@ const Info = ({ closeInfo, projectItem }) => {
               <div className="info__tools-items">
                 {projectItem?.tool?.map((tool) => (
                   <div key={tool?.id} className="info__tools-item">
-                    <div className="info__tools-icon">{tool?.icon}</div>
+                    <div
+                      className="info__tools-icon"
+                      dangerouslySetInnerHTML={{ __html: tool?.icon }}
+                    />
                     <div className="info__tooltip">{tool?.name}</div>
                   </div>
                 ))}
