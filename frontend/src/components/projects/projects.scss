@@ -162,7 +162,13 @@
     cursor: pointer;
 
     span {
+      display: -webkit-box;
+      overflow: hidden;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
       text-align: left;
+      -webkit-box-orient: vertical;
+      box-orient: vertical;
     }
 
     svg {

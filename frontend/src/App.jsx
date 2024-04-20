@@ -1,32 +1,33 @@
 import { Routes, Route } from "react-router-dom";
-import { lazy, Suspense, useState, useEffect } from "react"; // Import lazy from react
+import { useState, useEffect } from "react";
 import Layout from "./layouts/Layout";
 import AnimatedCursor from "react-animated-cursor";
 import projectRoutes from "./components/projects/projectRoutes";
-import Loader from "./components/loading/Loader";
 import "./icons";
 import { MyProvider } from "./provider/MyContext";
-
-const Home = lazy(() => import("./components/home/Home"));
-const Articles = lazy(() => import("./components/articles/Articles"));
-const Contact = lazy(() => import("./components/contact/Contact"));
-const Profile = lazy(() => import("./components/profile/Profile"));
-const Resume = lazy(() => import("./components/resume/Resume"));
-const About = lazy(() => import("./components/about/About"));
+import {
+  Home,
+  Profile,
+  About,
+  Resume,
+  Contact,
+  Articles,
+  Loader,
+} from "./components";
 
 function App() {
-  // const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
 
-  // useEffect(() => {
-  //   // Simulate an API call
-  //   setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 2000);
-  // }, []);
+  useEffect(() => {
+    // Simulate an API call
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
 
-  // if (isLoading) {
-  //   return <Loader />;
-  // }
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <>
@@ -63,24 +64,22 @@ function App() {
         />
 
         <MyProvider>
-          <Suspense fallback={<Loader />}>
-            <Routes>
-              <Route path="/" element={<Layout />}>
-                <Route index element={<Home />} />
-                <Route path="home" element={<Home />} />
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Home />} />
+              <Route path="home" element={<Home />} />
 
-                <Route path="/">
-                  <Route index element={<Profile />} />
-                  <Route path="about" element={<About />} />
-                  <Route path="resume" element={<Resume />} />
+              <Route path="/">
+                <Route index element={<Profile />} />
+                <Route path="about" element={<About />} />
+                <Route path="resume" element={<Resume />} />
 
-                  {projectRoutes}
-                  <Route path="articles" element={<Articles />} />
-                  <Route path="contact" element={<Contact />} />
-                </Route>
+                {projectRoutes}
+                <Route path="articles" element={<Articles />} />
+                <Route path="contact" element={<Contact />} />
               </Route>
-            </Routes>
-          </Suspense>
+            </Route>
+          </Routes>
         </MyProvider>
       </div>
     </>
