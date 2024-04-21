@@ -14,7 +14,7 @@ const Info = ({ closeInfo, projectItem }) => {
         </div>
         <div className="info__content">
           <div className="info__img-content">
-            <img src="/images/news1.jpg" alt="info image" />
+            <img src={projectItem?.image[0]?.url} alt="info image" />
           </div>
           <div className="info__text-content">
             <div className="info__text-desc">
