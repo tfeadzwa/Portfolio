@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "https://tourmaline-kataifi-788ade.netlify.app/*"
+  to = "https://tfeadzwa.netlify.app/:splat"
+  status = 301
+  force = true
