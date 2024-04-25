@@ -9,7 +9,7 @@ const About = () => {
         <span>About Me</span>
       </h2>
 
-      <div className="about__container border-line-h pos-relative">
+      <div className="about__container border-line-jh pos-relative">
         <div className="about__content custom-text">
           <div className="about__custom-intro">
             <p>
@@ -45,14 +45,6 @@ const About = () => {
                 </div>
                 <div className="about__tooltip">React</div>
               </div>
-
-              <div className="about__tool-item">
-                <div className="about__tool-icon">
-                  <FontAwesomeIcon icon={["fab", "github"]} />
-                </div>
-                <div className="about__tooltip">GitHub</div>
-              </div>
-
               <div className="about__tool-item">
                 <div className="about__tool-icon">
                   <FontAwesomeIcon icon={["fab", "node-js"]} />
@@ -108,12 +100,7 @@ const About = () => {
                 </div>
                 <div className="about__tooltip">Express JS</div>
               </div> */}
-              <div className="about__tool-item">
-                <div className="about__tool-icon">
-                  <i className="devicon-sass-original"></i>
-                </div>
-                <div className="about__tooltip">Sass</div>
-              </div>
+
               {/* <div className="about__tool-item">
                 <div className="about__tool-icon">
                   <i className="devicon-androidstudio-plain"></i>
@@ -138,7 +125,7 @@ const About = () => {
         </h2>
 
         <div className="about__services-container">
-          <div className="about__service-items border-line-v pos-relative">
+          <div className="about__service-items pos-relative">
             <div className="about__item-container border-line-h pos-relative">
               <div className="about__service-item">
                 <div className="about__service-icon icon">

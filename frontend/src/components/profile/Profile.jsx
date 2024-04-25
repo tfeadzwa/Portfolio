@@ -12,7 +12,7 @@ const Profile = () => {
           <div className="profile__slide">
             <div className="profile__image"></div>
             <div className="profile__info">
-              <div className="profile__title">Tanyanyiwa</div>
+              <div className="profile__title">Tafadzwa Tanyanyiwa</div>
               <div className="profile__typed">
                 <ReactTyped
                   strings={[

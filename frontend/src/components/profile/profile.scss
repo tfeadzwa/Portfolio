@@ -51,9 +51,8 @@
   &__image {
     z-index: 0;
     position: absolute;
-    background-image: url(/images/profile-image.jpg);
+    background-image: url(/images/tafa0.jpg);
     background-image: url(/images/tafadzwa-warmth-3.jpg);
-
     background-size: 700px 800px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -62,6 +61,7 @@
     height: 100%;
     top: 0;
     left: 0;
+    // filter: grayscale(100%);
 
     -webkit-border-radius: 1.625rem;
     border-radius: 1.625rem;
