@@ -146,7 +146,7 @@ const ContactForm = () => {
           disabled={
             !formik.isValid || formik.isSubmitting || !formik.values.reCAPTCHA
           }
-        > 
+        >
           <span>SEND MESSAGE</span>
           <svg
             className="contact__arrow"
@@ -166,3 +166,5 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
+
+//modify here
