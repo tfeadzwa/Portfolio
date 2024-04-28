@@ -19,7 +19,7 @@ const Layout = () => {
     <>
       <Header />
       <div style={{ display: "flex" }}>
-        <main className="container">
+        <main className="container px-0">
           <ProfileCard>
             <Profile />
           </ProfileCard>

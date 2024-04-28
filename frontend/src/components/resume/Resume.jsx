@@ -422,16 +422,13 @@ const Resume = () => {
           <div className="resume__items">
             <ul className="resume__skills-items resume__general-sec-items">
               <li className="resume__skills-item light-background pos-relative">
-                <div className="resume__skills-icon">
-                  <img
-                    src="/images/united-kingdom.png"
-                    style={{ width: "4rem", height: "4rem" }}
-                  />
+                <div className="resume__skills-icon flex flex-col items-center">
+                  <img src="/images/united-kingdom.png" />
                   <div className=" resume__skills-name">English</div>
                 </div>
               </li>
               <li className="resume__skills-item light-background pos-relative">
-                <div className="resume__skills-icon">
+                <div className="resume__skills-icon flex flex-col items-center">
                   <img src="/images/zim-flag.png" />
                   <div className=" resume__skills-name">Shona</div>
                 </div>
