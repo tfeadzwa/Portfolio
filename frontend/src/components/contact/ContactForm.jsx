@@ -6,7 +6,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Button } from "../ui/button";
 import { ArrowRight, Loader2 } from "lucide-react";
-import { toast } from "sonner";
+import { toast } from "../ui/use-toast";
 
 const ContactForm = () => {
   const [isCaptchaValid, setIsCaptchaValid] = useState(false);
@@ -76,13 +76,10 @@ const ContactForm = () => {
         captchaRef.current.reset();
         formik.resetForm();
 
-        toast("Email has been sent!", {
+        toast({
+          title: "Your message has been successfully submitted!",
           description:
-            "Your email has been sent, I'll replay to you very soon!",
-          action: {
-            label: "Undo",
-            onClick: () => console.log("Undo"),
-          },
+            "Thank you for reaching out. I'll get back to you as soon as possible.",
         });
       } catch (error) {
         console.log(error);
