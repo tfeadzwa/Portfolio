@@ -14,6 +14,7 @@ import {
   Articles,
   Loader,
 } from "./components";
+import { Toaster } from "./components/ui/sonner";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -82,6 +83,7 @@ function App() {
           </Routes>
         </MyProvider>
       </div>
+      <Toaster />
     </>
   );
 }

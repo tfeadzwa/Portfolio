@@ -4,9 +4,13 @@ import axios from "axios";
 import emailjs from "emailjs-com";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { Button } from "../ui/button";
+import { ArrowRight, Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 const ContactForm = () => {
   const [isCaptchaValid, setIsCaptchaValid] = useState(false);
+  const [buttonLoad, setButtonLoad] = useState(false);
 
   const captchaRef = useRef(null);
   const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -60,15 +64,26 @@ const ContactForm = () => {
           values,
           PUBLIC_KEY
         );
+
         console.log(
           "Email successfully sent!",
           emailResponse.status,
           emailResponse.text
         );
 
+        setButtonLoad(false);
         // Reset reCAPTCHA and form after successful submission
         captchaRef.current.reset();
         formik.resetForm();
+
+        toast("Email has been sent!", {
+          description:
+            "Your email has been sent, I'll replay to you very soon!",
+          action: {
+            label: "Undo",
+            onClick: () => console.log("Undo"),
+          },
+        });
       } catch (error) {
         console.log(error);
       }
@@ -84,7 +99,7 @@ const ContactForm = () => {
             name="user_fullname"
             placeholder="Full Name"
             id="full-name"
-            className="contact__form-full-name"
+            className="contact__form-full-name outline-none"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.user_fullname}
@@ -102,7 +117,7 @@ const ContactForm = () => {
             name="user_email"
             placeholder="Email Address"
             id="email-address"
-            className="contact__form-email"
+            className="contact__form-email outline-none"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             value={formik.values.user_email}
@@ -117,7 +132,7 @@ const ContactForm = () => {
 
       <textarea
         name="user_message"
-        className="contact__form-message"
+        className="contact__form-message outline-none"
         placeholder="Your Message"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
@@ -138,29 +153,26 @@ const ContactForm = () => {
         onChange={onCaptchaChange}
       />
 
-      {formik.isValid && isCaptchaValid && (
-        <button
-          type="submit"
-          id="send-button"
-          className="contact__form-send-button send-button"
-          disabled={
-            !formik.isValid || formik.isSubmitting || !formik.values.reCAPTCHA
-          }
-        >
-          <span>SEND MESSAGE</span>
-          <svg
-            className="contact__arrow"
-            viewBox="0 0 25 24"
-            fill="currentColor"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M16.67 12.5825L5.5 12.5825C4.95 12.5825 4.5 12.1325 4.5 11.5825C4.5 11.0325 4.95 10.5825 5.5 10.5825L16.67 10.5825L11.79 5.7025C11.4 5.3125 11.4 4.6825 11.79 4.2925C12.18 3.9025 12.81 3.9025 13.2 4.2925L19.79 10.8825C20.18 11.2725 20.18 11.9025 19.79 12.2925L13.2 18.8825C13.0132 19.0698 12.7595 19.175 12.495 19.175C12.2305 19.175 11.9768 19.0698 11.79 18.8825C11.4 18.4925 11.4 17.8525 11.79 17.4625L16.67 12.5825Z"
-              fill="currentColor"
-            />
-          </svg>
-        </button>
-      )}
+      <Button
+        type="submit"
+        disabled={
+          !formik.isValid || formik.isSubmitting || !formik.values.reCAPTCHA
+        }
+        className="group py-[1.5rem] border-[0.12rem] bg-transparent hover:bg-transparent hover:text-[#4caf51] hover:border-[#4caf51]"
+        onClick={() => setButtonLoad(true)}
+      >
+        {buttonLoad ? (
+          <div className="flex items-center">
+            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+            PLEASE WAIT...
+          </div>
+        ) : (
+          <div className="flex items-center gap-[0.125em]">
+            SEND MESSAGE
+            <ArrowRight className="group-hover:translate-x-2 w-[22px] h-[22px] transition-all duration-300 ease-in-out"></ArrowRight>
+          </div>
+        )}
+      </Button>
     </form>
   );
 };
