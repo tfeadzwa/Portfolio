@@ -2,7 +2,7 @@ const { google } = require("googleapis");
 const nodemailer = require("nodemailer");
 
 const handleSendEmail = async (req, res) => {
-  const { email, fullName, subject, message } = req.body;
+  const { email, fullName, message } = req.body;
 
   const oAuth2Client = new google.auth.OAuth2(
     process.env.CLIENT_ID,
@@ -32,7 +32,7 @@ const handleSendEmail = async (req, res) => {
     const mailOptions = {
       from: `${fullName} <tfadzwa02@gmail.com>`,
       to: "tfeadzwa@gmail.com",
-      subject,
+      subject: `You have received a message from ${fullName}`,
       text: message,
       replyTo: email,
       html: `
