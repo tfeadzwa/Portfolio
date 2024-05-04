@@ -1,7 +1,6 @@
 import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState } from "react";
 import axios from "axios";
-import emailjs from "emailjs-com";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Button } from "../ui/button";
@@ -13,21 +12,28 @@ const ContactForm = () => {
   const [buttonLoad, setButtonLoad] = useState(false);
 
   const captchaRef = useRef(null);
-  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const onCaptchaChange = (value) => {
     setIsCaptchaValid(!!value); // Sets the state to true if value is not null or empty
     formik.setFieldValue("reCAPTCHA", captchaRef.current.getValue());
   };
 
+  const errorToast = (description) => {
+    toast({
+      variant: "distructive",
+      title: "Uh oh! Something went wrong.",
+      description: `${description}`,
+    });
+  };
+
   const validationSchema = Yup.object({
-    user_fullname: Yup.string()
+    fullName: Yup.string()
       .max(50, "Must be 50 characters or less")
       .required("Full name is required"),
-    user_email: Yup.string()
+    email: Yup.string()
       .email("Invalid email address")
       .required("Email is required"),
-    user_message: Yup.string()
+    message: Yup.string()
       .min(20, "Must be at least 20 characters")
       .max(500, "Must be 500 characters or less")
       .required("Message is required"),
@@ -35,9 +41,9 @@ const ContactForm = () => {
 
   const formik = useFormik({
     initialValues: {
-      user_fullname: "",
-      user_email: "",
-      user_message: "",
+      fullName: "",
+      email: "",
+      message: "",
     },
 
     validationSchema,
@@ -45,44 +51,40 @@ const ContactForm = () => {
       const token = captchaRef.current.getValue();
       if (!token) {
         // Handle the case where reCAPTCHA is not validated
-        console.log("reCAPTCHA validation failed");
+        errorToast("reCAPTCHA validation failed!");
         return;
       }
 
       try {
-        const response = await axios.post(
-          "https://portfolio-kh3y.onrender.com/post",
-          {
-            token,
-          }
-        );
-        console.log(response);
+        await axios
+          .post("https://portfolio-kh3y.onrender.com/captcha", { token })
+          .then()
+          .catch((err) =>
+            errorToast(`Couldn't validate captcha ${err.message}`)
+          );
 
-        const emailResponse = await emailjs.send(
-          "service_931uj3m",
-          "contact_form",
-          values,
-          PUBLIC_KEY
-        );
-
-        console.log(
-          "Email successfully sent!",
-          emailResponse.status,
-          emailResponse.text
-        );
+        // send email
+        await axios
+          .post("https://portfolio-kh3y.onrender.com/send-email", values)
+          .then((resp) => {
+            if (resp.status === 200) {
+              toast({
+                title: "Your message has been successfully submitted!",
+                description:
+                  "Thank you for reaching out. I'll get back to you as soon as possible.",
+              });
+              captchaRef.current.reset();
+              formik.resetForm();
+            } else {
+              errorToast("Couldn't send message, please try again");
+            }
+          })
+          .catch(() => errorToast("Couldn't send message, please try again!"));
 
         setButtonLoad(false);
-        // Reset reCAPTCHA and form after successful submission
-        captchaRef.current.reset();
-        formik.resetForm();
-
-        toast({
-          title: "Your message has been successfully submitted!",
-          description:
-            "Thank you for reaching out. I'll get back to you as soon as possible.",
-        });
       } catch (error) {
-        console.log(error);
+        setButtonLoad(false);
+        errorToast("Failed to send message, please try again!");
       }
     },
   });
@@ -93,60 +95,56 @@ const ContactForm = () => {
         <div className="contact__form-input-container">
           <input
             type="text"
-            name="user_fullname"
+            name="fullName"
             placeholder="Full Name"
             id="full-name"
             className="contact__form-full-name outline-none"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            value={formik.values.user_fullname}
+            value={formik.values.fullName}
           />
-          {formik.touched.user_fullname && formik.errors.user_fullname && (
-            <div className="contact__form-error">
-              {formik.errors.user_fullname}
-            </div>
+          {formik.touched.fullName && formik.errors.fullName && (
+            <div className="contact__form-error">{formik.errors.fullName}</div>
           )}
         </div>
 
         <div className="contact__form-input-container">
           <input
             type="email"
-            name="user_email"
+            name="email"
             placeholder="Email Address"
             id="email-address"
             className="contact__form-email outline-none"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-            value={formik.values.user_email}
+            value={formik.values.email}
           />
-          {formik.touched.user_email && formik.errors.user_email && (
-            <div className="contact__form-error">
-              {formik.errors.user_email}
-            </div>
+          {formik.touched.email && formik.errors.email && (
+            <div className="contact__form-error">{formik.errors.email}</div>
           )}
         </div>
       </div>
 
       <textarea
-        name="user_message"
+        name="message"
         className="contact__form-message outline-none"
         placeholder="Your Message"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        value={formik.values.user_message}
+        value={formik.values.message}
       />
-      {formik.touched.user_message && formik.errors.user_message && (
-        <div className="contact__form-error">{formik.errors.user_message}</div>
+      {formik.touched.message && formik.errors.message && (
+        <div className="contact__form-error">{formik.errors.message}</div>
       )}
 
-      <p style={{ marginTop: "1rem" }}>
-        reCAPTCHA <span style={{ color: "rgb(255, 120, 0)" }}>*</span>
+      <p className="mt-[1rem]">
+        reCAPTCHA <span className="text-[rgb(255,120,0)]">*</span>
       </p>
 
       <ReCAPTCHA
         sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
         ref={captchaRef}
-        style={{ marginTop: "0.5rem" }}
+        className="mt-[0.5em]"
         onChange={onCaptchaChange}
       />
 
