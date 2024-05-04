@@ -1,0 +1,13 @@
+body {
+    height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color:azure;
+    color: black;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
