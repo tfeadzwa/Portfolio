@@ -2,89 +2,70 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState } from "react";
 import axios from "axios";
 import { useFormik } from "formik";
-import * as Yup from "yup";
+import validationSchema from "./validationSchema";
 import { Button } from "../ui/button";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { toast } from "../ui/use-toast";
 
 const ContactForm = () => {
-  const [isCaptchaValid, setIsCaptchaValid] = useState(false);
   const [buttonLoad, setButtonLoad] = useState(false);
-
   const captchaRef = useRef(null);
-
-  const onCaptchaChange = (value) => {
-    setIsCaptchaValid(!!value); // Sets the state to true if value is not null or empty
-    formik.setFieldValue("reCAPTCHA", captchaRef.current.getValue());
-  };
-
-  const errorToast = (description) => {
-    toast({
-      variant: "distructive",
-      title: "Uh oh! Something went wrong.",
-      description: `${description}`,
-    });
-  };
-
-  const validationSchema = Yup.object({
-    fullName: Yup.string()
-      .max(50, "Must be 50 characters or less")
-      .required("Full name is required"),
-    email: Yup.string()
-      .email("Invalid email address")
-      .required("Email is required"),
-    message: Yup.string()
-      .min(20, "Must be at least 20 characters")
-      .max(500, "Must be 500 characters or less")
-      .required("Message is required"),
-  });
 
   const formik = useFormik({
     initialValues: {
       fullName: "",
       email: "",
       message: "",
+      reCAPTCHA: "",
     },
-
     validationSchema,
-    onSubmit: async (values) => {
-      const token = captchaRef.current.getValue();
+    onSubmit: async (values, { resetForm }) => {
+      setButtonLoad(true);
+      const token = values.reCAPTCHA;
       if (!token) {
-        // Handle the case where reCAPTCHA is not validated
-        errorToast("reCAPTCHA validation failed!");
+        toast({
+          variant: "destructive",
+          title: "Uh oh! Something went wrong.",
+          description: "reCAPTCHA validation failed!",
+        });
+        setButtonLoad(false);
         return;
       }
 
       try {
-        await axios
-          .post("https://portfolio-kh3y.onrender.com/captcha", { token })
-          .then()
-          .catch((err) =>
-            errorToast(`Couldn't validate captcha ${err.message}`)
+        const captchaResponse = await axios.post(
+          "https://portfolio-kh3y.onrender.com/captcha",
+          { token }
+        );
+
+        if (captchaResponse.status === 200) {
+          const emailResponse = await axios.post(
+            "https://portfolio-kh3y.onrender.com/send-email",
+            values
           );
 
-        // send email
-        await axios
-          .post("https://portfolio-kh3y.onrender.com/send-email", values)
-          .then((resp) => {
-            if (resp.status === 200) {
-              toast({
-                title: "Your message has been successfully submitted!",
-                description:
-                  "Thank you for reaching out. I'll get back to you as soon as possible.",
-              });
-              captchaRef.current.reset();
-              formik.resetForm();
-            } else {
-              errorToast("Couldn't send message, please try again");
-            }
-          })
-          .catch(() => errorToast("Couldn't send message, please try again!"));
-
-        setButtonLoad(false);
+          if (emailResponse.status === 200) {
+            toast({
+              title: "Your message has been successfully submitted!",
+              description:
+                "Thank you for reaching out. I'll get back to you as soon as possible.",
+            });
+            captchaRef.current.reset();
+            resetForm();
+          } else {
+            throw new Error("Email not sent");
+          }
+        } else {
+          throw new Error("Captcha not validated");
+        }
       } catch (error) {
+        toast({
+          variant: "destructive",
+          title: "Uh oh! Something went wrong.",
+          description: error.message,
+        });
+      } finally {
         setButtonLoad(false);
-        errorToast("Failed to send message, please try again!");
       }
     },
   });
@@ -145,7 +126,9 @@ const ContactForm = () => {
         sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
         ref={captchaRef}
         className="mt-[0.5em]"
-        onChange={onCaptchaChange}
+        onChange={(value) => {
+          formik.setFieldValue("reCAPTCHA", value || "");
+        }}
       />
 
       <Button
@@ -154,7 +137,6 @@ const ContactForm = () => {
           !formik.isValid || formik.isSubmitting || !formik.values.reCAPTCHA
         }
         className="group py-[1.5rem] border-[0.12rem] bg-transparent hover:bg-transparent hover:text-[#4caf51] hover:border-[#4caf51]"
-        onClick={() => setButtonLoad(true)}
       >
         {buttonLoad ? (
           <div className="flex items-center">
