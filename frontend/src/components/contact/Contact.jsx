@@ -50,9 +50,8 @@ const Contact = () => {
           </div>
           <ContactForm />
         </div>
-
-        <Toaster />
       </section>
+      <Toaster />
     </>
   );
 };
