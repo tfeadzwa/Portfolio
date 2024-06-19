@@ -28,13 +28,17 @@ const Contact = () => {
                 <strong>
                   <span>Email:</span>
                 </strong>
-                <span>tfeadzwa@gmail.com</span>
+                <span>
+                  <a href="mailto:tfeadzwa@gmail.com">tfeadzwa@gmail.com</a>
+                </span>
               </li>
               <li className="info-list">
                 <strong>
                   <span>Phone:</span>
                 </strong>
-                <span>+263 78 394 8647</span>
+                <span>
+                  <a href="tel:+263783948647">+263 78 394 8647</a>
+                </span>
               </li>
               <li className="info-list">
                 <strong>
