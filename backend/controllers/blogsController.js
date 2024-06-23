@@ -1,4 +1,4 @@
-const Blog = require("../models/blog");
+const Blog = require("../models/Blog");
 const asyncHandler = require("express-async-handler");
 const bcrypt = require("bcrypt");
 
