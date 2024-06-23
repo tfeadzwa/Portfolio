@@ -32,7 +32,7 @@ const handleSendEmail = async (req, res) => {
     const mailOptions = {
       from: `${fullName} <tfadzwa02@gmail.com>`,
       to: "tfeadzwa@gmail.com",
-      subject: `You have received a message from ${fullName}`,
+      subject: `New message from ${fullName}`,
       text: message,
       replyTo: email,
       html: `

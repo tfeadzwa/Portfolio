@@ -4,9 +4,13 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const cors = require("cors");
+const mongoose = require("mongoose");
+const { connectDB } = require("./config/dbConn");
 require("dotenv").config();
 
-const port = process.env.PORT || 3500;
+const PORT = process.env.PORT || 3500;
+
+connectDB();
 
 app.use(cors(corsOptions));
 
@@ -21,5 +25,14 @@ app.use("/", require("./routes/root"));
 app.use("/send-email", require("./routes/api/sendEmail"));
 // captcha route
 app.use("/captcha", require("./routes/api/captcha"));
+// blogs
+app.use("/blog", require("./routes/api/blog"));
 
-app.listen(port, () => console.log(`Server running on ${port}`));
+mongoose.connection.once("open", () => {
+  console.log("Connected to MongoDB");
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+});
+
+mongoose.connection.on("error", (err) => {
+  console.log(`Database error: ${err.message}`);
+});
