@@ -27,6 +27,8 @@ app.use("/send-email", require("./routes/api/sendEmail"));
 app.use("/captcha", require("./routes/api/captcha"));
 // blogs
 app.use("/blog", require("./routes/api/blog"));
+// status update
+app.use("/api/status-update", require("./routes/api/statusUpdate"));
 
 mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");
